@@ -5,7 +5,7 @@ interface TextProps {
 }
 
 export const CommonText = styled.p<TextProps>`
-  font-family: "Noticia Text";
+  /* font-family: "Noticia Text"; */
   font-size: ${(props) =>
     props.fontSize
       ? props.theme.fontSize[props.fontSize]

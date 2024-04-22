@@ -11,11 +11,11 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const lightTheme = {
-  body: "#F3F5F9",
+  body: "#E6E4E2",
   text: "#0b0904",
   colors: {
     black: "#0b0904",
-    white: "#F3F5F9",
+    white: "#E6E4E2",
     test: "#AA0000",
     transparent: `rgba(0,0,0,0.5)`,
   },
@@ -33,10 +33,10 @@ export const lightTheme = {
 
 export const darkTheme = {
   body: "#0b0904",
-  text: "#F3F5F9",
+  text: "#E6E4E2",
   colors: {
     black: "#0b0904",
-    white: "#F3F5F9",
+    white: "#E6E4E2",
     test: "#AA0000",
     transparent: `rgba(0,0,0,0.5)`,
   },
