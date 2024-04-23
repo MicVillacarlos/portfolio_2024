@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
@@ -14,8 +13,8 @@ export const lightTheme = {
   body: "#E6E4E2",
   text: "#0b0904",
   colors: {
-    black: "#0b0904",
-    white: "#E6E4E2",
+    body: "#E6E4E2",
+    text: "#0b0904",
     test: "#AA0000",
     transparent: `rgba(0,0,0,0.5)`,
   },
@@ -35,8 +34,8 @@ export const darkTheme = {
   body: "#0b0904",
   text: "#E6E4E2",
   colors: {
-    black: "#0b0904",
-    white: "#E6E4E2",
+    body: "#0b0904",
+    text: "#E6E4E2",
     test: "#AA0000",
     transparent: `rgba(0,0,0,0.5)`,
   },

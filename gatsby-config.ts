@@ -27,7 +27,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Noticia Text"],
+          families: ["Noticia Text", "Oswald"],
         },
       },
     },
