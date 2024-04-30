@@ -31,35 +31,60 @@ const IndexPage: React.FC<PageProps> = () => {
       <PageHolder>
         <CommonFlexContainer height="30px" justify="space-between">
           {/* Theme switch ---------- */}
-          {isDarkTheme ? (
-            <CommonAnchor onClick={toggleTheme}>
-              <SunIcon height="20" />
-            </CommonAnchor>
-          ) : (
-            <CommonAnchor onClick={toggleTheme}>
-              <MoonIcon height="20" />
-            </CommonAnchor>
-          )}
+          <div>
+            {isDarkTheme ? (
+              <CommonAnchor onClick={toggleTheme}>
+                <SunIcon height="20" />
+              </CommonAnchor>
+            ) : (
+              <CommonAnchor onClick={toggleTheme}>
+                <MoonIcon height="20" />
+              </CommonAnchor>
+            )}
+          </div>
 
           {/* Socials ---------- */}
-          <CommonFlexContainer>
-            <CommonAnchor>
-              <CvIcon height="18" />
-            </CommonAnchor>
-            <CommonAnchor>
-              <InstagramIcon />
-            </CommonAnchor>
-            <CommonAnchor>
-              <LinkedInIcon />
-            </CommonAnchor>
-          </CommonFlexContainer>
+          <div>
+            <CommonFlexContainer>
+              <CommonAnchor>
+                <CvIcon height="18" />
+              </CommonAnchor>
+              <CommonAnchor>
+                <InstagramIcon />
+              </CommonAnchor>
+              <CommonAnchor>
+                <LinkedInIcon />
+              </CommonAnchor>
+            </CommonFlexContainer>
+          </div>
         </CommonFlexContainer>
-
         <CommonFlexContainer>
-          <TitleText>ECCENTRIC ENTHUSIAST</TitleText>
+          <TitleText>I LIKE CODING AND BUILDING APPS</TitleText>
         </CommonFlexContainer>
 
         <CommonDivider />
+
+        <CommonFlexContainer>
+          <CommonFlexContainer
+            justify="start"
+            align="start"
+            isColumn
+            width="30%"
+          >
+            <CommonText fontSize="xLarge" tabletFontSize="large">
+              Web Developer based in Cebu, Philippines
+            </CommonText>
+          </CommonFlexContainer>
+
+          <CommonFlexContainer
+            justify="start"
+            align="start"
+            isColumn
+            width="70%"
+          >
+            <CommonText fontSize="xxxLarge"></CommonText>
+          </CommonFlexContainer>
+        </CommonFlexContainer>
       </PageHolder>
     </ThemeProvider>
   );
@@ -67,4 +92,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Eccentric Enthusiast</title>;
+export const Head: HeadFC = () => <title>ECCENTRIC ENTHUSIAST</title>;

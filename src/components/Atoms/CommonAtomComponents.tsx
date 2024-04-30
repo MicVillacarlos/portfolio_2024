@@ -6,20 +6,23 @@ interface DividerProps {
 
 interface FlexProps {
   justify?: string;
+  align?: string;
   height?: string;
+  width?: string;
+  isColumn?: boolean;
 }
 
 export const CommonDivider = styled.div<DividerProps>`
   width: 100%;
-  border: 1px solid ${(props) => props.theme.text};
+  border: 0.5px solid ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.text};
-  height: ${(props) => (props.height ? props.height : "2px")};
 `;
 
 export const CommonFlexContainer = styled.div<FlexProps>`
-  width: "100%";
-  height: ${(props)=>props.height};
   display: flex;
-  align-items: center;
+  width: ${(props) => (props.width ? props.width : "100%")};
+  height: ${(props) => props.height};
+  flex-direction: ${(props) => (props.isColumn ? "column" : "row")};
   justify-content: ${(props) => (props.justify ? props.justify : "center")};
+  align-items: ${(props)=>props.align ? props.align : "center"};
 `;
