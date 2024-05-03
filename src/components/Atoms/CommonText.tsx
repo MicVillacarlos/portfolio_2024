@@ -6,6 +6,7 @@ interface TextProps {
   isTitleFont?: boolean;
   laptopFontSize?: string;
   tabletFontSize?: string;
+  margin?: string;
 }
 
 export const TitleText = styled.h1<TextProps>`
@@ -24,11 +25,12 @@ export const TitleText = styled.h1<TextProps>`
   @media ${device.tablet} {
     text-align: center;
     line-height: 25px;
-    font-size: ${(props) => props.theme.fontSize.xLarge};
+    font-size: ${(props) => props.theme.fontSize.xxLarge};
   }
 `;
 
 export const CommonText = styled.p<TextProps>`
+  margin: ${(props)=>props.margin};
   font-family: ${(props) =>
     props.isTitleFont
       ? "Helvetica, sans-serif"

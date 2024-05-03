@@ -64,24 +64,42 @@ const IndexPage: React.FC<PageProps> = () => {
 
         <CommonDivider />
 
-        <CommonFlexContainer>
+        <CommonFlexContainer isColumnTablet>
+          <CommonFlexContainer
+            justify="start"
+            align="start"
+            isColumn
+            isColumnTablet
+            width="70%"
+            widthTablet="100%"
+            padding="0px 10px 0px 0px"
+            margin="10px 0px 0px 0px"
+            borderRight="1px solid black; "
+          >
+            {/*-----------------Dummy Photo----------------- */}
+            <CommonFlexContainer
+              background="test"
+              height="200px"
+              margin="10px 0px"
+            />
+              <CommonText fontSize="xLarge" margin="0px">
+                I'm Michael, Web Developer based in Cebu, Philippines.
+              </CommonText>
+              <CommonText fontSize="small">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                aliquet diam quis quam fermentum, vitae ultricies ex suscipit.
+                Maecenas ac sodales turpis. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia curae; Sed
+                rhoncus sapien vitae nisi eleifend, quis malesuada purus
+                eleifend.
+              </CommonText>
+          </CommonFlexContainer>
           <CommonFlexContainer
             justify="start"
             align="start"
             isColumn
             width="30%"
-          >
-            <CommonText fontSize="xLarge" tabletFontSize="large">
-              Web Developer based in Cebu, Philippines
-            </CommonText>
-          </CommonFlexContainer>
-
-          <CommonFlexContainer
-            justify="start"
-            align="start"
-            isColumn
-            width="70%"
-          >
+            >
             <CommonText fontSize="xxxLarge"></CommonText>
           </CommonFlexContainer>
         </CommonFlexContainer>

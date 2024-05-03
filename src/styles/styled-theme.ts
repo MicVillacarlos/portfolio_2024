@@ -9,7 +9,7 @@ const fontSize = {
   xLarge: "26px",
   xxLarge: "30px",
   xxxLarge: "34px",
-  title: "45px"
+  title: "45px",
 };
 
 const themeColors = {
