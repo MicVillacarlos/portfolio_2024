@@ -42,6 +42,7 @@ export const CommonFlexContainer = styled.div<FlexProps>`
     props.background ? props.theme[props.background] : ""};
   margin: ${(props) => props.margin};
   border-right: ${(props) => props.borderRight};
+  border-color: ${(props) => props.theme.text};
   padding: ${(props)=>props.padding};
 
   @media ${device.tablet} {

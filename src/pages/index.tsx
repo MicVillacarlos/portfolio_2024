@@ -7,7 +7,7 @@ import {
   CommonText,
   TitleText,
 } from "../components/Atoms/CommonText";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PageHolder } from "../components/Template/CommonTemplateComponents";
 import {
   CommonDivider,
@@ -20,17 +20,27 @@ import {
   MoonIcon,
   SunIcon,
 } from "../components/Icons/Icons";
+import { windowScreenSize } from "../utils/media_query";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
+  const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
   const toggleTheme = () => setIsDarkTheme(!isDarkTheme);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
       <PageHolder>
         <CommonFlexContainer height="30px" justify="space-between">
-          {/* Theme switch ---------- */}
+          {/*----------Theme switch---------- */}
           <div>
             {isDarkTheme ? (
               <CommonAnchor onClick={toggleTheme}>
@@ -58,8 +68,9 @@ const IndexPage: React.FC<PageProps> = () => {
             </CommonFlexContainer>
           </div>
         </CommonFlexContainer>
+
         <CommonFlexContainer>
-          <TitleText>I LIKE CODING AND BUILDING APPS</TitleText>
+          <TitleText>LOREM IPSUM DOLLAR SIGN HELLO WORLD</TitleText>
         </CommonFlexContainer>
 
         <CommonDivider />
@@ -70,11 +81,13 @@ const IndexPage: React.FC<PageProps> = () => {
             align="start"
             isColumn
             isColumnTablet
-            width="70%"
+            width={windowScreenSize.tablet <= windowSize ? "60%" : "100%"}
             widthTablet="100%"
             padding="0px 10px 0px 0px"
             margin="10px 0px 0px 0px"
-            borderRight="1px solid black; "
+            borderRight={
+              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
+            }
           >
             {/*-----------------Dummy Photo----------------- */}
             <CommonFlexContainer
@@ -82,25 +95,32 @@ const IndexPage: React.FC<PageProps> = () => {
               height="200px"
               margin="10px 0px"
             />
-              <CommonText fontSize="xLarge" margin="0px">
-                I'm Michael, Web Developer based in Cebu, Philippines.
-              </CommonText>
-              <CommonText fontSize="small">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                aliquet diam quis quam fermentum, vitae ultricies ex suscipit.
-                Maecenas ac sodales turpis. Vestibulum ante ipsum primis in
-                faucibus orci luctus et ultrices posuere cubilia curae; Sed
-                rhoncus sapien vitae nisi eleifend, quis malesuada purus
-                eleifend.
-              </CommonText>
+            {/*-----------------Dummy Photo----------------- */}
+            <CommonText fontSize="xLarge" margin="0px">
+              I'm Michael, Web Developer based in Cebu, Philippines.
+            </CommonText>
+            <CommonText fontSize="small">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              aliquet diam quis quam fermentum, vitae ultricies ex suscipit.
+              Maecenas ac sodales turpis. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia curae; Sed
+              rhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend.
+            </CommonText>
           </CommonFlexContainer>
+
           <CommonFlexContainer
+            padding={
+              windowScreenSize.tablet <= windowSize ? "0px 0px 0px 10px" : ""
+            }
             justify="start"
             align="start"
+            width={windowScreenSize.tablet <= windowSize ? "40%" : "100%"}
             isColumn
-            width="30%"
-            >
-            <CommonText fontSize="xxxLarge"></CommonText>
+          >
+            <CommonText fontSize="xLarge">Work Experience</CommonText>
+            <CommonText fontSize="xLarge">Freelance Projects</CommonText>
+            <CommonText fontSize="xLarge">Others/Hobbies</CommonText>
+            <CommonText fontSize="xLarge">Coding Journey</CommonText>
           </CommonFlexContainer>
         </CommonFlexContainer>
       </PageHolder>
