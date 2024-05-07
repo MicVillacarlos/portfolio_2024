@@ -7,6 +7,7 @@ interface TextProps {
   laptopFontSize?: string;
   tabletFontSize?: string;
   margin?: string;
+  fontWeight?: number;
 }
 
 export const TitleText = styled.h1<TextProps>`
@@ -15,7 +16,7 @@ export const TitleText = styled.h1<TextProps>`
   font-size: ${(props) => props.theme.fontSize.title};
   color: ${(props) => props.theme.text};
   letter-spacing: -1px;
-  line-height: 15px;
+  line-height: 10px;
   word-wrap: break-word;
 
   @media ${device.laptop} {
@@ -30,7 +31,9 @@ export const TitleText = styled.h1<TextProps>`
 `;
 
 export const CommonText = styled.p<TextProps>`
-  margin: ${(props)=>props.margin};
+  line-height: normal;
+  font-weight: ${(props) => props.fontWeight};
+  margin: ${(props) => props.margin};
   font-family: ${(props) =>
     props.isTitleFont
       ? "Helvetica, sans-serif"

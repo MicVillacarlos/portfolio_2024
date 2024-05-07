@@ -21,6 +21,8 @@ import {
   SunIcon,
 } from "../components/Icons/Icons";
 import { windowScreenSize } from "../utils/media_query";
+import WorkExperienceCard from "../components/Organisms/WorkExperienceCard/WorkExperienceCard";
+import { WorkExperienceCardProps } from "../types/types";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -34,6 +36,16 @@ const IndexPage: React.FC<PageProps> = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const dummyData: WorkExperienceCardProps = {
+    companyName: "Tech Solutions Inc.",
+    startDate: "January 2018",
+    endDate: "Present",
+    description:
+      "Worked on various projects involving web development and software engineering.",
+    technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
+  };
+  
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
@@ -69,11 +81,20 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </CommonFlexContainer>
 
-        <CommonFlexContainer>
-          <TitleText>LOREM IPSUM DOLLAR SIGN HELLO WORLD</TitleText>
+        <CommonFlexContainer isColumn isColumnTablet>
+          <TitleText>Michael Villacarlos</TitleText>
+          <CommonText
+            margin="-12px 0px 5px 0px"
+            isTitleFont
+            fontSize={
+              windowScreenSize.tablet <= windowSize ? "small" : "xxSmall"
+            }
+          >
+            I build web apps with love.
+          </CommonText>
         </CommonFlexContainer>
 
-        <CommonDivider />
+        {/* <CommonDivider /> */}
 
         <CommonFlexContainer isColumnTablet>
           <CommonFlexContainer
@@ -96,9 +117,6 @@ const IndexPage: React.FC<PageProps> = () => {
               margin="10px 0px"
             />
             {/*-----------------Dummy Photo----------------- */}
-            <CommonText fontSize="xLarge" margin="0px">
-              I'm Michael, Web Developer based in Cebu, Philippines.
-            </CommonText>
             <CommonText fontSize="small">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               aliquet diam quis quam fermentum, vitae ultricies ex suscipit.
@@ -117,10 +135,8 @@ const IndexPage: React.FC<PageProps> = () => {
             width={windowScreenSize.tablet <= windowSize ? "40%" : "100%"}
             isColumn
           >
-            <CommonText fontSize="xLarge">Work Experience</CommonText>
-            <CommonText fontSize="xLarge">Freelance Projects</CommonText>
-            <CommonText fontSize="xLarge">Others/Hobbies</CommonText>
-            <CommonText fontSize="xLarge">Coding Journey</CommonText>
+            <CommonText fontSize="medium">WORK EXPERIENCE</CommonText>
+            <WorkExperienceCard {...dummyData} />
           </CommonFlexContainer>
         </CommonFlexContainer>
       </PageHolder>
