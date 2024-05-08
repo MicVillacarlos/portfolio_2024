@@ -39,8 +39,9 @@ const IndexPage: React.FC<PageProps> = () => {
 
   const dummyData: WorkExperienceCardProps = {
     companyName: "Tech Solutions Inc.",
-    startDate: "January 2018",
+    startDate: "Jan 2024",
     endDate: "Present",
+    position: "Junior Web Developer",
     description:
       "Worked on various projects involving web development and software engineering.",
     technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
@@ -134,6 +135,7 @@ const IndexPage: React.FC<PageProps> = () => {
             align="start"
             width={windowScreenSize.tablet <= windowSize ? "40%" : "100%"}
             isColumn
+            isColumnTablet
           >
             <CommonText fontSize="medium">WORK EXPERIENCE</CommonText>
             <WorkExperienceCard {...dummyData} />
