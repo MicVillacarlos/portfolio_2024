@@ -14,16 +14,24 @@ const fontSize = {
 
 const themeColors = {
   light: {
-    body: "#E6E4E2",
+    body: "#D9D8D5",
     text: "#0b0904",
     test: "#AA0000",
     transparent: "rgba(0,0,0,0.5)",
+    //colors -------
+    red: "#BE3D20",
+    lightBlue: "#BBC7C0",
+    dirtyYellow: "#985A10"
   },
   dark: {
     body: "#0b0904",
-    text: "#E6E4E2",
+    text: "#D9D8D5",
     test: "#AA0000",
     transparent: "rgba(0,0,0,0.5)",
+    //colors -------
+    red: "#BE3D20",
+    lightBlue: "#BBC7C0",
+    dirtyYellow: "#985A10"
   }
 };
 

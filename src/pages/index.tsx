@@ -12,6 +12,7 @@ import { PageHolder } from "../components/Template/CommonTemplateComponents";
 import {
   CommonDivider,
   CommonFlexContainer,
+  OblongContainer,
 } from "../components/Atoms/CommonAtomComponents";
 import {
   CvIcon,
@@ -65,8 +66,7 @@ const IndexPage: React.FC<PageProps> = () => {
               </CommonAnchor>
             )}
           </div>
-
-          {/* Socials ---------- */}
+          {/* Socials START---------- */}
           <div>
             <CommonFlexContainer>
               <CommonAnchor>
@@ -80,6 +80,7 @@ const IndexPage: React.FC<PageProps> = () => {
               </CommonAnchor>
             </CommonFlexContainer>
           </div>
+          {/* Socials END ---------- */}
         </CommonFlexContainer>
 
         <CommonFlexContainer isColumn isColumnTablet>
@@ -97,7 +98,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
         {/* <CommonDivider /> */}
 
-        <CommonFlexContainer isColumnTablet>
+        <CommonFlexContainer isColumnTablet align="start">
           <CommonFlexContainer
             justify="start"
             align="start"
@@ -111,13 +112,13 @@ const IndexPage: React.FC<PageProps> = () => {
               windowScreenSize.tablet <= windowSize ? "1px solid" : ""
             }
           >
-            {/*-----------------Dummy Photo----------------- */}
+            {/*-----------------Dummy Photo START----------------- */}
             <CommonFlexContainer
               background="test"
               height="200px"
               margin="10px 0px"
             />
-            {/*-----------------Dummy Photo----------------- */}
+            {/*-----------------Dummy Photo END----------------- */}
             <CommonText fontSize="small">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               aliquet diam quis quam fermentum, vitae ultricies ex suscipit.
@@ -137,7 +138,9 @@ const IndexPage: React.FC<PageProps> = () => {
             isColumn
             isColumnTablet
           >
-            <CommonText fontSize="medium">WORK EXPERIENCE</CommonText>
+            <OblongContainer>
+              <CommonText fontSize="medium">WORK EXPERIENCE</CommonText>
+            </OblongContainer>
             <WorkExperienceCard {...dummyData} />
           </CommonFlexContainer>
         </CommonFlexContainer>

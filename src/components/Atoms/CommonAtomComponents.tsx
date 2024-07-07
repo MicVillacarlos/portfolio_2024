@@ -23,11 +23,14 @@ interface FlexProps {
   borderBottom?: string;
 }
 
+interface OblongContainerProps{
+  borderColor?: string;
+}
+
 
 export const CommonDivider = styled.div<DividerProps>`
   width: 100%;
   border: 0.5px solid ${(props) => props.theme.text};
-  background-color: ${(props) => props.theme.text};
 `;
 
 export const CommonFlexContainer = styled.div<FlexProps>`
@@ -49,4 +52,13 @@ export const CommonFlexContainer = styled.div<FlexProps>`
     flex-direction: ${(props) => (props.isColumnTablet ? "column" : "row")};
     width: ${(props) => props.widthTablet};
   }
+`;
+
+export const OblongContainer = styled.div<OblongContainerProps>`
+  padding: 3px 4px 3px 4px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) => props.theme.red};
 `;
