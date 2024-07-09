@@ -25,11 +25,13 @@ const WorkExperienceCard = (props: WorkExperienceCardProps) => {
           </CommonText>
           <CommonText fontSize="xxSmall" margin="-15px 0px 0px 0px">{position}</CommonText>
         </CommonFlexContainer>
-        <CommonFlexContainer width="50%">
-          <CommonText fontSize="xSmall">
+
+        <CommonFlexContainer width="50%" justify="end">
+          <CommonText fontSize="xSmall" align="right">
             {startDate} - {endDate}
           </CommonText>
         </CommonFlexContainer>
+
       </CommonFlexContainer>
       <CommonFlexContainer margin="20px 0px">
         <CommonText fontSize="xSmall">{description}</CommonText>

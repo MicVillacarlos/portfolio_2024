@@ -38,15 +38,26 @@ const IndexPage: React.FC<PageProps> = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const dummyData: WorkExperienceCardProps = {
-    companyName: "Tech Solutions Inc.",
-    startDate: "Jan 2024",
-    endDate: "Present",
-    position: "Junior Web Developer",
-    description:
-      "Worked on various projects involving web development and software engineering.",
-    technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
-  };
+  const dummyData: WorkExperienceCardProps[] = [
+    {
+      companyName: "Ark Creative Web Studio Inc.",
+      startDate: "May 2023",
+      endDate: "Present",
+      position: "Fullstack Junior Web Developer",
+      description:
+        "Worked on various projects involving web development and software engineering.",
+      technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
+    },
+    {
+      companyName: "AJIO IT Solutions",
+      startDate: "September 2022",
+      endDate: "April 2023",
+      position: "Frontend Junior Web Developer",
+      description:
+        "Worked on various projects involving web development and software engineering.",
+      technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
+    },
+  ];
   
 
   return (
@@ -114,7 +125,7 @@ const IndexPage: React.FC<PageProps> = () => {
           >
             {/*-----------------Dummy Photo START----------------- */}
             <CommonFlexContainer
-              background="test"
+              background="text"
               height="200px"
               margin="10px 0px"
             />
@@ -130,7 +141,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
           <CommonFlexContainer
             padding={
-              windowScreenSize.tablet <= windowSize ? "0px 0px 0px 10px" : ""
+              windowScreenSize.tablet <= windowSize ? "20px 0px 0px 10px" : ""
             }
             justify="start"
             align="start"
@@ -138,10 +149,19 @@ const IndexPage: React.FC<PageProps> = () => {
             isColumn
             isColumnTablet
           >
-            <OblongContainer>
-              <CommonText fontSize="medium">WORK EXPERIENCE</CommonText>
+            <OblongContainer borderColor="red">
+              <CommonText
+                isTitleFont
+                fontSize="xSmall"
+                color="red"
+                lineHeight={0.5}
+              >
+                WORK EXPERIENCE
+              </CommonText>
             </OblongContainer>
-            <WorkExperienceCard {...dummyData} />
+            {dummyData.map((item) => {
+              return <WorkExperienceCard {...item} />;
+            })}
           </CommonFlexContainer>
         </CommonFlexContainer>
       </PageHolder>

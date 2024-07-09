@@ -3,10 +3,12 @@ import { device } from "../../utils/media_query";
 
 interface TextProps {
   fontSize?: string;
+  lineHeight?: number;
   isTitleFont?: boolean;
   laptopFontSize?: string;
   tabletFontSize?: string;
   margin?: string;
+  align?: string;
   fontWeight?: number;
 }
 
@@ -31,9 +33,10 @@ export const TitleText = styled.h1<TextProps>`
 `;
 
 export const CommonText = styled.p<TextProps>`
-  line-height: normal;
+  line-height: ${(props) => (props.lineHeight ? props.lineHeight : "normal")};
   font-weight: ${(props) => props.fontWeight};
   margin: ${(props) => props.margin};
+  text-align: ${(props) => props.align};
   font-family: ${(props) =>
     props.isTitleFont
       ? "Helvetica, sans-serif"
@@ -42,7 +45,8 @@ export const CommonText = styled.p<TextProps>`
     props.fontSize
       ? props.theme.fontSize[props.fontSize]
       : props.theme.fontSize.medium};
-  color: ${(props) => props.theme.text};
+  color: ${(props) =>
+    props.color ? props.theme[props.color] : props.theme.text};
 
   @media ${device.laptop} {
     font-size: ${(props) => props.laptopFontSize};

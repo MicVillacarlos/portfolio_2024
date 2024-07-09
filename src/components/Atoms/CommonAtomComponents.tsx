@@ -46,7 +46,8 @@ export const CommonFlexContainer = styled.div<FlexProps>`
   margin: ${(props) => props.margin};
   border-right: ${(props) => props.borderRight};
   border-color: ${(props) => props.theme.text};
-  padding: ${(props)=>props.padding};
+  padding: ${(props) => props.padding};
+  word-break: break-all;
 
   @media ${device.tablet} {
     flex-direction: ${(props) => (props.isColumnTablet ? "column" : "row")};
@@ -55,10 +56,13 @@ export const CommonFlexContainer = styled.div<FlexProps>`
 `;
 
 export const OblongContainer = styled.div<OblongContainerProps>`
-  padding: 3px 4px 3px 4px;
-  border-radius: 20px;
+  padding: 0px 10px;
+  border-radius: 500px;
+  border: ${(props) =>
+    props.borderColor
+      ? `1px solid ${props.theme[props.borderColor]}`
+      : `1px solid ${props.theme.text}`};
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.theme.red};
 `;
