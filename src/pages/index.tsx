@@ -107,8 +107,6 @@ const IndexPage: React.FC<PageProps> = () => {
           </CommonText>
         </CommonFlexContainer>
 
-        {/* <CommonDivider /> */}
-
         <CommonFlexContainer isColumnTablet align="start">
           <CommonFlexContainer
             justify="start"
@@ -130,6 +128,16 @@ const IndexPage: React.FC<PageProps> = () => {
               margin="10px 0px"
             />
             {/*-----------------Dummy Photo END----------------- */}
+            <OblongContainer borderColor="green">
+              <CommonText
+                isTitleFont
+                fontSize="xSmall"
+                color="green"
+                lineHeight={0.5}
+              >
+                ABOUT ME
+              </CommonText>
+            </OblongContainer>
             <CommonText fontSize="small">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               aliquet diam quis quam fermentum, vitae ultricies ex suscipit.
@@ -138,7 +146,7 @@ const IndexPage: React.FC<PageProps> = () => {
               rhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend.
             </CommonText>
           </CommonFlexContainer>
-
+          {/* ------------------- Column 2 -------------------- */}
           <CommonFlexContainer
             padding={
               windowScreenSize.tablet <= windowSize ? "20px 0px 0px 10px" : ""
@@ -163,6 +171,30 @@ const IndexPage: React.FC<PageProps> = () => {
               return <WorkExperienceCard {...item} />;
             })}
           </CommonFlexContainer>
+        </CommonFlexContainer>
+        {/* ----------------------- PROJECTS ----------------------- */}
+        {/* <CommonDivider margin="10px 0px" isHideTablet/> */}
+        <CommonFlexContainer
+          isColumn
+          isColumnTablet
+          align="start"
+          marginTop="20px"
+          marginTopTablet="0px"
+        >
+          <OblongContainer borderColor="red">
+            <CommonText
+              isTitleFont
+              fontSize="xSmall"
+              color="red"
+              lineHeight={0.5}
+            >
+              PROJECTS
+            </CommonText>
+          </OblongContainer>
+          <CommonFlexContainer
+            marginTop="20px"
+            background="test"
+          >h</CommonFlexContainer>
         </CommonFlexContainer>
       </PageHolder>
     </ThemeProvider>

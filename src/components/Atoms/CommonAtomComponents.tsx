@@ -3,6 +3,10 @@ import { device } from "../../utils/media_query";
 
 interface DividerProps {
   height?: string;
+  margin?: string;
+  marginTop?: string;
+  marginBottom?: string;
+  isHideTablet?: boolean;
 }
 
 interface FlexProps {
@@ -16,6 +20,8 @@ interface FlexProps {
   background?: string;
   gap?: string;
   margin?: string;
+  marginTop?: string;
+  marginTopTablet?: string;
   padding?: string;
   borderLeft?: string;
   borderRight?: string;
@@ -31,6 +37,11 @@ interface OblongContainerProps{
 export const CommonDivider = styled.div<DividerProps>`
   width: 100%;
   border: 0.5px solid ${(props) => props.theme.text};
+  margin: ${(props) => props.margin};
+
+  @media ${device.tablet} {
+    display: ${(props)=> props.isHideTablet && "none"};
+  }
 `;
 
 export const CommonFlexContainer = styled.div<FlexProps>`
@@ -48,8 +59,10 @@ export const CommonFlexContainer = styled.div<FlexProps>`
   border-color: ${(props) => props.theme.text};
   padding: ${(props) => props.padding};
   word-break: break-all;
+  margin-top: ${(props) => props.marginTop};
 
   @media ${device.tablet} {
+    margin-top: ${(props) => props.marginTopTablet};
     flex-direction: ${(props) => (props.isColumnTablet ? "column" : "row")};
     width: ${(props) => props.widthTablet};
   }

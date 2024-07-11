@@ -20,8 +20,9 @@ const themeColors = {
     transparent: "rgba(0,0,0,0.5)",
     //colors -------
     red: "#BE3D20",
-    lightBlue: "#BBC7C0",
-    dirtyYellow: "#985A10"
+    blue: "#10AEA6",
+    yellow: "#C1A238",
+    green: "#325234",
   },
   dark: {
     body: "#0b0904",
@@ -30,9 +31,10 @@ const themeColors = {
     transparent: "rgba(0,0,0,0.5)",
     //colors -------
     red: "#BE3D20",
-    lightBlue: "#BBC7C0",
-    dirtyYellow: "#985A10"
-  }
+    blue: "#10AEA6",
+    yellow: "#C1A238",
+    green: "#6F8570",
+  },
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -46,10 +48,10 @@ export const GlobalStyles = createGlobalStyle`
 
 export const lightTheme = {
   ...themeColors.light,
-  fontSize
+  fontSize,
 };
 
 export const darkTheme = {
   ...themeColors.dark,
-  fontSize
+  fontSize,
 };
