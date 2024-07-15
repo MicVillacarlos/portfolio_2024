@@ -12,18 +12,21 @@ import { PageHolder } from "../components/Template/CommonTemplateComponents";
 import {
   CommonDivider,
   CommonFlexContainer,
-  OblongContainer,
+  CommonGhostButton,
+  CommonOblongContainer,
 } from "../components/Atoms/CommonAtomComponents";
 import {
   CvIcon,
   InstagramIcon,
   LinkedInIcon,
   MoonIcon,
+  NorthEastArrowIcon,
   SunIcon,
 } from "../components/Icons/Icons";
 import { windowScreenSize } from "../utils/media_query";
 import WorkExperienceCard from "../components/Organisms/WorkExperienceCard/WorkExperienceCard";
 import { WorkExperienceCardProps } from "../types/types";
+import ProjectCard from "../components/Organisms/WorkExperienceCard/ProjectCard";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -58,7 +61,6 @@ const IndexPage: React.FC<PageProps> = () => {
       technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
     },
   ];
-  
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
@@ -80,9 +82,6 @@ const IndexPage: React.FC<PageProps> = () => {
           {/* Socials START---------- */}
           <div>
             <CommonFlexContainer>
-              <CommonAnchor>
-                <CvIcon height="18" />
-              </CommonAnchor>
               <CommonAnchor>
                 <InstagramIcon />
               </CommonAnchor>
@@ -116,7 +115,7 @@ const IndexPage: React.FC<PageProps> = () => {
             width={windowScreenSize.tablet <= windowSize ? "60%" : "100%"}
             widthTablet="100%"
             padding="0px 10px 0px 0px"
-            margin="10px 0px 0px 0px"
+            marginTop="10px"
             borderRight={
               windowScreenSize.tablet <= windowSize ? "1px solid" : ""
             }
@@ -128,7 +127,7 @@ const IndexPage: React.FC<PageProps> = () => {
               margin="10px 0px"
             />
             {/*-----------------Dummy Photo END----------------- */}
-            <OblongContainer borderColor="green">
+            <CommonOblongContainer borderColor="green">
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
@@ -137,7 +136,7 @@ const IndexPage: React.FC<PageProps> = () => {
               >
                 ABOUT ME
               </CommonText>
-            </OblongContainer>
+            </CommonOblongContainer>
             <CommonText fontSize="small">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               aliquet diam quis quam fermentum, vitae ultricies ex suscipit.
@@ -157,7 +156,7 @@ const IndexPage: React.FC<PageProps> = () => {
             isColumn
             isColumnTablet
           >
-            <OblongContainer borderColor="red">
+            <CommonOblongContainer borderColor="red">
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
@@ -166,22 +165,33 @@ const IndexPage: React.FC<PageProps> = () => {
               >
                 WORK EXPERIENCE
               </CommonText>
-            </OblongContainer>
+            </CommonOblongContainer>
             {dummyData.map((item) => {
               return <WorkExperienceCard {...item} />;
             })}
+            <CommonGhostButton>
+              <CommonText
+                isTitleFont
+                fontSize="small"
+                fontWeight={580}
+                lineHeight={0.5}
+              >
+                View Full Résumé
+              </CommonText>
+              <NorthEastArrowIcon paddingTop="3px" width="16" height="16"/>
+            </CommonGhostButton>
           </CommonFlexContainer>
         </CommonFlexContainer>
+
         {/* ----------------------- PROJECTS ----------------------- */}
-        {/* <CommonDivider margin="10px 0px" isHideTablet/> */}
         <CommonFlexContainer
           isColumn
           isColumnTablet
           align="start"
-          marginTop="20px"
           marginTopTablet="0px"
         >
-          <OblongContainer borderColor="red">
+          <CommonDivider margin="10px 0px" isHideTablet />
+          <CommonOblongContainer borderColor="red">
             <CommonText
               isTitleFont
               fontSize="xSmall"
@@ -190,11 +200,41 @@ const IndexPage: React.FC<PageProps> = () => {
             >
               PROJECTS
             </CommonText>
-          </OblongContainer>
+          </CommonOblongContainer>
           <CommonFlexContainer
             marginTop="20px"
-            background="test"
-          >h</CommonFlexContainer>
+            justify="start"
+            gap="10px"
+            isColumnTablet
+          >
+            <ProjectCard />
+            <ProjectCard />
+          </CommonFlexContainer>
+        </CommonFlexContainer>
+        {/* ----------------------- Technologies ----------------------- */}
+        <CommonFlexContainer
+          isColumn
+          isColumnTablet
+          align="end"
+          marginTop="20px"
+        >
+          <CommonDivider margin="10px 0px" isHideTablet />
+          <CommonOblongContainer borderColor="red">
+            <CommonText
+              isTitleFont
+              fontSize="xSmall"
+              color="red"
+              lineHeight={0.5}
+            >
+              TECHNOLOGIES WORKED WITH
+            </CommonText>
+          </CommonOblongContainer>
+
+          <CommonFlexContainer
+            marginTop="20px"
+            justify="start"
+            gap="10px"
+          ></CommonFlexContainer>
         </CommonFlexContainer>
       </PageHolder>
     </ThemeProvider>

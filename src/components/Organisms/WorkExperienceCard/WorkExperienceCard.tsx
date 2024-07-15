@@ -9,7 +9,6 @@ const WorkExperienceCard = (props: WorkExperienceCardProps) => {
     startDate,
     endDate,
     description,
-    technologies,
     position,
   } = props;
   return (
@@ -19,14 +18,14 @@ const WorkExperienceCard = (props: WorkExperienceCardProps) => {
         justify="space-between"
         align="center"
       >
-        <CommonFlexContainer isColumn isColumnTablet align="left" width="50%">
+        <CommonFlexContainer isColumn isColumnTablet align="left" width="55%">
           <CommonText fontSize="small" fontWeight={800}>
             {companyName}
           </CommonText>
           <CommonText fontSize="xxSmall" margin="-15px 0px 0px 0px">{position}</CommonText>
         </CommonFlexContainer>
 
-        <CommonFlexContainer width="50%" justify="end">
+        <CommonFlexContainer width="45%" justify="end">
           <CommonText fontSize="xSmall" align="right">
             {startDate} - {endDate}
           </CommonText>

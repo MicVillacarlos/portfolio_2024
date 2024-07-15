@@ -4,20 +4,22 @@ import styled from "styled-components";
 interface IconProps {
   height?: string;
   width?: string;
-  fill?: string;
+  color?: string;
+  paddingTop?: string;
 }
 
 const IconWrapper = styled.div<IconProps>`
+  padding-top: ${(props)=> props.paddingTop};
   svg {
     fill: ${(props) =>
-      props.fill ? props.theme.colors[props.fill] : props.theme.text};
+    props.color ? props.theme[props.color] : props.theme.text};
     transition: fill 0.2s ease-in, color 0.2s ease-in;
   }
 `;
 
 export const SunIcon = (props: IconProps) => {
   return (
-    <IconWrapper fill={props.fill}>
+    <IconWrapper color={props.color}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -960 960 960"
@@ -32,7 +34,7 @@ export const SunIcon = (props: IconProps) => {
 
 export const MoonIcon = (props: IconProps) => {
   return (
-    <IconWrapper fill={props.fill}>
+    <IconWrapper color={props.color}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -960 960 960"
@@ -47,7 +49,7 @@ export const MoonIcon = (props: IconProps) => {
 
 export const LinkedInIcon = (props: IconProps) => {
   return (
-    <IconWrapper fill={props.fill}>
+    <IconWrapper color={props.color}>
       <svg
         height={props.height ? props.height : "24"}
         width={props.width ? props.width : "24"}
@@ -62,7 +64,7 @@ export const LinkedInIcon = (props: IconProps) => {
 
 export const InstagramIcon = (props: IconProps) => {
   return (
-    <IconWrapper fill={props.fill}>
+    <IconWrapper color={props.color}>
       <svg
         height={props.height ? props.height : "24"}
         width={props.width ? props.width : "24"}
@@ -78,7 +80,7 @@ export const InstagramIcon = (props: IconProps) => {
 
 export const CvIcon = (props: IconProps) => {
   return (
-    <IconWrapper fill={props.fill}>
+    <IconWrapper color={props.color}>
       <svg
         id="Layer_1"
         data-name="Layer 1"
@@ -89,6 +91,21 @@ export const CvIcon = (props: IconProps) => {
       >
         <title>CV</title>
         <path d="M180,5.42A174.58,174.58,0,1,0,354.58,180,174.58,174.58,0,0,0,180,5.42ZM167.47,231a64.89,64.89,0,0,1-8.74,23.75,43.41,43.41,0,0,1-18,15.92q-11.62,5.74-30.15,5.75-21.13,0-33.67-6.79a45.72,45.72,0,0,1-19.18-19.58q-6.66-12.78-8.62-30.54a360.12,360.12,0,0,1-2-39.15,361.24,361.24,0,0,1,2-39q2-17.88,8.62-30.67a48.24,48.24,0,0,1,19.18-20q12.52-7.17,33.67-7.18,20.1,0,31.72,6.53t17.35,16.57a57.5,57.5,0,0,1,7.18,21.67,179.64,179.64,0,0,1,1.44,21.79H130.67q0-20.36-4.83-29.62t-17.62-9.27A17.59,17.59,0,0,0,96.61,115q-4.58,3.78-7.18,12.26t-3.66,22.19q-1,13.71-1,33.54a324.93,324.93,0,0,0,1.44,34.2q1.42,13.05,4.43,20.22t7.57,9.66a21.75,21.75,0,0,0,10.57,2.48,24.88,24.88,0,0,0,9.27-1.7c2.87-1.12,5.35-3.39,7.44-6.78s3.74-8.18,5-14.36,1.83-14.31,1.83-24.4h37.58A167.89,167.89,0,0,1,167.47,231Zm102.58,42.54H221.76L179,87.21h40.2L245.51,225h.79L274,87.21h38.9Z" />
+      </svg>
+    </IconWrapper>
+  );
+};
+
+export const NorthEastArrowIcon = (props: IconProps) => {
+  return (
+    <IconWrapper color={props.color} paddingTop={props.paddingTop}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height={props.height ? props.height : "24"}
+        width={props.width ? props.width : "24"}
+        viewBox="0 -960 960 960"
+      >
+        <path d="m216-160-56-56 464-464H360v-80h400v400h-80v-264L216-160Z" />
       </svg>
     </IconWrapper>
   );
