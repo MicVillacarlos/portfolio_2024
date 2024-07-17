@@ -37,7 +37,7 @@ export const CommonText = styled.p<TextProps>`
   font-weight: ${(props) => props.fontWeight};
   margin: ${(props) => props.margin};
   text-align: ${(props) => props.align};
-  font-family: ${(props) =>
+  font-family:${(props) =>
     props.isTitleFont
       ? "Helvetica, sans-serif"
       : "Playfair Display, Times New Roman , Times, serif"};
@@ -58,7 +58,7 @@ export const CommonText = styled.p<TextProps>`
 `;
 
 export const CommonAnchor = styled.a`
-  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-family: Helvetica, sans-serif;
   :hover {
     cursor: pointer;
   }

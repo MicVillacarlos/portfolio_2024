@@ -42,7 +42,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
-    font-family: "Playfair Display", "Oswald";
+    font-family: Helvetica, sans-serif;
   }
 `;
 

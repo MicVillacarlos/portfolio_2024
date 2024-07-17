@@ -94,7 +94,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </CommonFlexContainer>
 
         <CommonFlexContainer isColumn isColumnTablet>
-          <TitleText>Michael Villacarlos</TitleText>
+          <TitleText>MICHAEL VILLACARLOS</TitleText>
           <CommonText
             margin="-12px 0px 5px 0px"
             isTitleFont
@@ -137,7 +137,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 ABOUT ME
               </CommonText>
             </CommonOblongContainer>
-            <CommonText fontSize="small">
+            <CommonText fontSize="small" isTitleFont>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               aliquet diam quis quam fermentum, vitae ultricies ex suscipit.
               Maecenas ac sodales turpis. Vestibulum ante ipsum primis in

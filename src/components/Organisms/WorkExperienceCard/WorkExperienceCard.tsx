@@ -19,21 +19,21 @@ const WorkExperienceCard = (props: WorkExperienceCardProps) => {
         align="center"
       >
         <CommonFlexContainer isColumn isColumnTablet align="left" width="55%">
-          <CommonText fontSize="small" fontWeight={800}>
+          <CommonText fontSize="medium" fontWeight={700}>
             {companyName}
           </CommonText>
-          <CommonText fontSize="xxSmall" margin="-15px 0px 0px 0px">{position}</CommonText>
+          <CommonText fontSize="xSmall" fontWeight={550} margin="-15px 0px 0px 0px" isTitleFont>{position}</CommonText>
         </CommonFlexContainer>
 
         <CommonFlexContainer width="45%" justify="end">
-          <CommonText fontSize="xSmall" align="right">
+          <CommonText fontSize="xSmall" align="right" isTitleFont>
             {startDate} - {endDate}
           </CommonText>
         </CommonFlexContainer>
 
       </CommonFlexContainer>
       <CommonFlexContainer margin="20px 0px">
-        <CommonText fontSize="xSmall">{description}</CommonText>
+        <CommonText fontSize="small" isTitleFont>{description}</CommonText>
       </CommonFlexContainer>
     </CommonFlexContainer>
   );
