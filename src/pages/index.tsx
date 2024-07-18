@@ -12,7 +12,6 @@ import { PageHolder } from "../components/Template/CommonTemplateComponents";
 import {
   CommonDivider,
   CommonFlexContainer,
-  CommonGhostButton,
   CommonOblongContainer,
 } from "../components/Atoms/CommonAtomComponents";
 import {
@@ -27,6 +26,7 @@ import { windowScreenSize } from "../utils/media_query";
 import WorkExperienceCard from "../components/Organisms/WorkExperienceCard/WorkExperienceCard";
 import { WorkExperienceCardProps } from "../types/types";
 import ProjectCard from "../components/Organisms/WorkExperienceCard/ProjectCard";
+import { motion } from "framer-motion";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -169,12 +169,12 @@ const IndexPage: React.FC<PageProps> = () => {
             {dummyData.map((item) => {
               return <WorkExperienceCard {...item} />;
             })}
-            {/* <CommonGhostButton isHover>
-              <CommonFlexContainer> */}
-                View Full Résumé
-                <NorthEastArrowIcon paddingTop="3px" width="16" height="16" />
-              {/* </CommonFlexContainer>
-            </CommonGhostButton> */}
+              <NorthEastArrowIcon
+                text={"View Full Résumé"}
+                paddingTop="3px"
+                width="16"
+                height="16"
+              />
           </CommonFlexContainer>
         </CommonFlexContainer>
 

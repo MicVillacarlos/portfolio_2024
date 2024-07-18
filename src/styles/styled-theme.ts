@@ -23,6 +23,7 @@ const themeColors = {
     blue: "#10AEA6",
     yellow: "#C1A238",
     green: "#325234",
+    hoverTextColor: "red",
   },
   dark: {
     body: "#0b0904",
@@ -34,6 +35,7 @@ const themeColors = {
     blue: "#10AEA6",
     yellow: "#C1A238",
     green: "#6F8570",
+    hoverTextColor: "red",
   },
 };
 

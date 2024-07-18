@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { device } from "../../utils/media_query";
+import { motion } from "framer-motion";
 
 interface DividerProps {
   height?: string;
@@ -87,20 +88,4 @@ export const CommonOblongContainer = styled.div<CommonOblongContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-export const CommonGhostButton = styled.button<GhostButtonProps>`
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  transition: transform 1s, box-shadow 0.2s;
-  font-size: ${(props) => props.theme.fontSize.small};
-
-  :hover {
-    cursor: pointer;
-    color: ${(props) => props.theme.test};
-    transform: translateY(-2px);
-  }
 `;

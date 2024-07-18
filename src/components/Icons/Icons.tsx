@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
@@ -6,14 +7,27 @@ interface IconProps {
   width?: string;
   color?: string;
   paddingTop?: string;
+  text?: string;
 }
 
-const IconWrapper = styled.div<IconProps>`
+const IconWrapper = styled(motion.div)<IconProps>`
   padding-top: ${(props) => props.paddingTop};
+  transition: fill 0.2s ease-in, color 0.2s ease-in;
+
   svg {
     fill: ${(props) =>
       props.color ? props.theme[props.color] : props.theme.text};
-    transition: fill 0.2s ease-in, color 0.2s ease-in;
+    transition: transform 0.2s ease-in, fill 0.2s ease-in;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: ${(props) => props.theme.hoverTextColor};
+
+    svg {
+      fill: ${(props) => props.theme.hoverTextColor};
+      transform: translateY(-2px);
+    }
   }
 `;
 
@@ -99,6 +113,7 @@ export const CvIcon = (props: IconProps) => {
 export const NorthEastArrowIcon = (props: IconProps) => {
   return (
     <IconWrapper color={props.color} paddingTop={props.paddingTop}>
+      {props.text}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height={props.height ? props.height : "24"}
