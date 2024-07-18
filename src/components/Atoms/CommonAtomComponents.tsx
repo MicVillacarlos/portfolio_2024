@@ -9,6 +9,10 @@ interface DividerProps {
   isHideTablet?: boolean;
 }
 
+interface GhostButtonProps {
+  isHover?:boolean
+}
+
 interface FlexProps {
   justify?: string;
   align?: string;
@@ -37,7 +41,7 @@ interface CommonOblongContainerProps {
 
 export const CommonDivider = styled.div<DividerProps>`
   width: 100%;
-  border: 0.5px solid ${(props) => props.theme.text};
+  border-top: 1px solid ${(props) => props.theme.text};
   margin: ${(props) => props.margin};
   margin-bottom: ${(props) => props.marginBottom};
 
@@ -58,6 +62,7 @@ export const CommonFlexContainer = styled.div<FlexProps>`
     props.background ? props.theme[props.background] : ""};
   margin: ${(props) => props.margin};
   border-right: ${(props) => props.borderRight};
+  border-left: ${(props) => props.borderLeft};
   border-color: ${(props) => props.theme.text};
   padding: ${(props) => props.padding};
   word-break: break-word;
@@ -84,14 +89,18 @@ export const CommonOblongContainer = styled.div<CommonOblongContainerProps>`
   justify-content: center;
 `;
 
-export const CommonGhostButton = styled.button`
+export const CommonGhostButton = styled.button<GhostButtonProps>`
   display: flex;
   gap: 5px;
   align-items: center;
   background-color: transparent;
   border: 0;
+  transition: transform 1s, box-shadow 0.2s;
+  font-size: ${(props) => props.theme.fontSize.small};
 
-  :hover{
+  :hover {
     cursor: pointer;
+    color: ${(props) => props.theme.test};
+    transform: translateY(-2px);
   }
 `;

@@ -9,10 +9,10 @@ interface IconProps {
 }
 
 const IconWrapper = styled.div<IconProps>`
-  padding-top: ${(props)=> props.paddingTop};
+  padding-top: ${(props) => props.paddingTop};
   svg {
     fill: ${(props) =>
-    props.color ? props.theme[props.color] : props.theme.text};
+      props.color ? props.theme[props.color] : props.theme.text};
     transition: fill 0.2s ease-in, color 0.2s ease-in;
   }
 `;

@@ -116,9 +116,6 @@ const IndexPage: React.FC<PageProps> = () => {
             widthTablet="100%"
             padding="0px 10px 0px 0px"
             marginTop="10px"
-            borderRight={
-              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
-            }
           >
             {/*-----------------Dummy Photo START----------------- */}
             <CommonFlexContainer
@@ -155,6 +152,9 @@ const IndexPage: React.FC<PageProps> = () => {
             width={windowScreenSize.tablet <= windowSize ? "40%" : "100%"}
             isColumn
             isColumnTablet
+            borderLeft={
+              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
+            }
           >
             <CommonOblongContainer borderColor="red">
               <CommonText
@@ -169,17 +169,12 @@ const IndexPage: React.FC<PageProps> = () => {
             {dummyData.map((item) => {
               return <WorkExperienceCard {...item} />;
             })}
-            <CommonGhostButton>
-              <CommonText
-                isTitleFont
-                fontSize="small"
-                fontWeight={580}
-                lineHeight={0.5}
-              >
+            {/* <CommonGhostButton isHover>
+              <CommonFlexContainer> */}
                 View Full Résumé
-              </CommonText>
-              <NorthEastArrowIcon paddingTop="3px" width="16" height="16"/>
-            </CommonGhostButton>
+                <NorthEastArrowIcon paddingTop="3px" width="16" height="16" />
+              {/* </CommonFlexContainer>
+            </CommonGhostButton> */}
           </CommonFlexContainer>
         </CommonFlexContainer>
 
