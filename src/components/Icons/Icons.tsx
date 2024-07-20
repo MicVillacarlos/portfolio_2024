@@ -10,6 +10,8 @@ interface IconProps {
   text?: string;
   hoverTextColor?: string;
   marginBottom?: string;
+  isTransformX?: boolean;
+  isNoHover?: boolean;
 }
 
 const IconWrapper = styled(motion.div)<IconProps>`
@@ -33,14 +35,19 @@ const IconWrapper = styled(motion.div)<IconProps>`
     svg {
       fill: ${(props) =>
         props.hoverTextColor && props.theme[props.hoverTextColor]};
-      transform: translateY(-2px) translateX(2px);
+      transform: ${(props) =>
+        props.isNoHover
+          ? ""
+          : props.isTransformX
+          ? `translateY(-2px) translateX(2px)`
+          : `translateY(-2px)`};
     }
   }
 `;
 
 export const SunIcon = (props: IconProps) => {
   return (
-    <IconWrapper color={props.color}>
+    <IconWrapper color={props.color} isNoHover={props.isNoHover}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -960 960 960"
@@ -55,7 +62,7 @@ export const SunIcon = (props: IconProps) => {
 
 export const MoonIcon = (props: IconProps) => {
   return (
-    <IconWrapper color={props.color}>
+    <IconWrapper color={props.color} isNoHover={props.isNoHover}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -960 960 960"
@@ -120,6 +127,8 @@ export const CvIcon = (props: IconProps) => {
 export const NorthEastArrowIcon = (props: IconProps) => {
   return (
     <IconWrapper
+      isNoHover={props.isNoHover}
+      isTransformX={props.isTransformX}
       color={props.color}
       paddingTop={props.paddingTop}
       hoverTextColor={props.hoverTextColor}

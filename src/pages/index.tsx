@@ -24,7 +24,7 @@ import {
 } from "../components/Icons/Icons";
 import { windowScreenSize } from "../utils/media_query";
 import WorkExperienceCard from "../components/Organisms/WorkExperienceCard/WorkExperienceCard";
-import { WorkExperienceCardProps } from "../types/types";
+import { ProjectDataTypes, WorkExperienceCardTypes } from "../types/types";
 import ProjectCard from "../components/Organisms/WorkExperienceCard/ProjectCard";
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -40,7 +40,7 @@ const IndexPage: React.FC<PageProps> = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const dummyData: WorkExperienceCardProps[] = [
+  const dummyData: WorkExperienceCardTypes[] = [
     {
       companyName: "Ark Creative Web Studio Inc.",
       startDate: "May 2023",
@@ -61,6 +61,33 @@ const IndexPage: React.FC<PageProps> = () => {
     },
   ];
 
+  const ProjectData: ProjectDataTypes[] = [
+    {
+      id: 1,
+      title: "GrowerStats",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
+    },
+    {
+      id: 2,
+      title: "Secret Dates",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
+    },
+    {
+      id: 3,
+      title: "KUHL Japan",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
+    },
+    {
+      id: 4,
+      title: "My HealthNotes",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
+    },
+  ];
+
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
@@ -70,11 +97,11 @@ const IndexPage: React.FC<PageProps> = () => {
           <div>
             {isDarkTheme ? (
               <CommonAnchor onClick={toggleTheme}>
-                <SunIcon height="20" />
+                <SunIcon height="20" isNoHover />
               </CommonAnchor>
             ) : (
               <CommonAnchor onClick={toggleTheme}>
-                <MoonIcon height="20" />
+                <MoonIcon height="20" isNoHover />
               </CommonAnchor>
             )}
           </div>
@@ -165,8 +192,8 @@ const IndexPage: React.FC<PageProps> = () => {
                 WORK EXPERIENCE
               </CommonText>
             </CommonOblongContainer>
-            {dummyData.map((item) => {
-              return <WorkExperienceCard {...item} />;
+            {dummyData.map((item, index) => {
+              return <WorkExperienceCard key={index} {...item} />;
             })}
             <NorthEastArrowIcon
               text={"View Full Résumé"}
@@ -174,6 +201,7 @@ const IndexPage: React.FC<PageProps> = () => {
               height="16"
               hoverTextColor="red"
               marginBottom="10px"
+              isTransformX
             />
           </CommonFlexContainer>
         </CommonFlexContainer>
@@ -201,39 +229,43 @@ const IndexPage: React.FC<PageProps> = () => {
             </CommonText>
           </CommonOblongContainer>
           <CommonFlexContainer
-            marginTop="20px"
+            marginTop="15px"
             justify="start"
             gap="10px"
             isColumnTablet
           >
-            <ProjectCard />
-            <ProjectCard />
+            {ProjectData.map((item, index) => {
+              return <ProjectCard key={index} {...item} />;
+            })}
           </CommonFlexContainer>
         </CommonFlexContainer>
         {/* ----------------------- Technologies ----------------------- */}
-        <CommonFlexContainer
-          isColumn
-          isColumnTablet
-          align="end"
-          marginTop="20px"
-        >
-          <CommonDivider margin="10px 0px" isHideTablet />
-          <CommonOblongContainer borderColor="red">
-            <CommonText
-              isTitleFont
-              fontSize="xSmall"
-              color="red"
-              lineHeight={0.5}
-            >
-              TECHNOLOGIES WORKED WITH
-            </CommonText>
-          </CommonOblongContainer>
-
-          <CommonFlexContainer
-            marginTop="20px"
-            justify="start"
-            gap="10px"
-          ></CommonFlexContainer>
+        <CommonDivider margin="20px 0px 0px 0px" isHideTablet />
+        <CommonFlexContainer marginTop="10px" isColumnTablet>
+          <CommonFlexContainer isColumn isColumnTablet align="start">
+            <CommonOblongContainer borderColor="red">
+              <CommonText
+                isTitleFont
+                fontSize="xSmall"
+                color="red"
+                lineHeight={0.5}
+              >
+                TECHNOLOGIES
+              </CommonText>
+            </CommonOblongContainer>
+          </CommonFlexContainer>
+          <CommonFlexContainer isColumn isColumnTablet align="end">
+            <CommonOblongContainer borderColor="red">
+              <CommonText
+                isTitleFont
+                fontSize="xSmall"
+                color="red"
+                lineHeight={0.5}
+              >
+                HOBBIES
+              </CommonText>
+            </CommonOblongContainer>
+          </CommonFlexContainer>
         </CommonFlexContainer>
       </PageHolder>
     </ThemeProvider>
