@@ -8,11 +8,16 @@ interface IconProps {
   color?: string;
   paddingTop?: string;
   text?: string;
+  hoverTextColor?: string;
+  marginBottom?: string;
 }
 
 const IconWrapper = styled(motion.div)<IconProps>`
   padding-top: ${(props) => props.paddingTop};
   transition: fill 0.2s ease-in, color 0.2s ease-in;
+  display: flex;
+  align-items: center;
+  margin-bottom: ${(props) => props.marginBottom};
 
   svg {
     fill: ${(props) =>
@@ -22,11 +27,13 @@ const IconWrapper = styled(motion.div)<IconProps>`
 
   &:hover {
     cursor: pointer;
-    color: ${(props) => props.theme.hoverTextColor};
+    color: ${(props) =>
+      props.hoverTextColor && props.theme[props.hoverTextColor]};
 
     svg {
-      fill: ${(props) => props.theme.hoverTextColor};
-      transform: translateY(-2px);
+      fill: ${(props) =>
+        props.hoverTextColor && props.theme[props.hoverTextColor]};
+      transform: translateY(-2px) translateX(2px);
     }
   }
 `;
@@ -112,7 +119,12 @@ export const CvIcon = (props: IconProps) => {
 
 export const NorthEastArrowIcon = (props: IconProps) => {
   return (
-    <IconWrapper color={props.color} paddingTop={props.paddingTop}>
+    <IconWrapper
+      color={props.color}
+      paddingTop={props.paddingTop}
+      hoverTextColor={props.hoverTextColor}
+      marginBottom={props.marginBottom}
+    >
       {props.text}
       <svg
         xmlns="http://www.w3.org/2000/svg"

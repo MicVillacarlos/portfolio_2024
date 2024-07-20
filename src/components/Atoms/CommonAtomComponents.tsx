@@ -38,6 +38,7 @@ interface FlexProps {
 
 interface CommonOblongContainerProps {
   borderColor?: string;
+  background?: string;
 }
 
 export const CommonDivider = styled.div<DividerProps>`
@@ -81,6 +82,8 @@ export const CommonFlexContainer = styled.div<FlexProps>`
 export const CommonOblongContainer = styled.div<CommonOblongContainerProps>`
   padding: 0px 10px;
   border-radius: 500px;
+  background-color: ${(props) =>
+    props.background && props.theme[props.background]};
   border: ${(props) =>
     props.borderColor
       ? `1px solid ${props.theme[props.borderColor]}`

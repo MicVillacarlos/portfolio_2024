@@ -26,7 +26,6 @@ import { windowScreenSize } from "../utils/media_query";
 import WorkExperienceCard from "../components/Organisms/WorkExperienceCard/WorkExperienceCard";
 import { WorkExperienceCardProps } from "../types/types";
 import ProjectCard from "../components/Organisms/WorkExperienceCard/ProjectCard";
-import { motion } from "framer-motion";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -169,12 +168,13 @@ const IndexPage: React.FC<PageProps> = () => {
             {dummyData.map((item) => {
               return <WorkExperienceCard {...item} />;
             })}
-              <NorthEastArrowIcon
-                text={"View Full Résumé"}
-                paddingTop="3px"
-                width="16"
-                height="16"
-              />
+            <NorthEastArrowIcon
+              text={"View Full Résumé"}
+              width="16"
+              height="16"
+              hoverTextColor="red"
+              marginBottom="10px"
+            />
           </CommonFlexContainer>
         </CommonFlexContainer>
 
@@ -186,11 +186,15 @@ const IndexPage: React.FC<PageProps> = () => {
           marginTopTablet="0px"
         >
           <CommonDivider margin="10px 0px" isHideTablet />
-          <CommonOblongContainer borderColor="red">
+          <CommonOblongContainer
+            borderColor="blue"
+            // background="blue"
+          >
             <CommonText
               isTitleFont
               fontSize="xSmall"
-              color="red"
+              color="blue"
+              // color="body"
               lineHeight={0.5}
             >
               PROJECTS

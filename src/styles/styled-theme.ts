@@ -20,10 +20,9 @@ const themeColors = {
     transparent: "rgba(0,0,0,0.5)",
     //colors -------
     red: "#BE3D20",
-    blue: "#10AEA6",
+    blue: "#3D87AA",
     yellow: "#C1A238",
     green: "#325234",
-    hoverTextColor: "red",
   },
   dark: {
     body: "#0b0904",
@@ -32,10 +31,9 @@ const themeColors = {
     transparent: "rgba(0,0,0,0.5)",
     //colors -------
     red: "#BE3D20",
-    blue: "#10AEA6",
+    blue: "#3D87AA",
     yellow: "#C1A238",
     green: "#6F8570",
-    hoverTextColor: "red",
   },
 };
 
