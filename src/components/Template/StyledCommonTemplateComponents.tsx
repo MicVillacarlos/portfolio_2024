@@ -14,5 +14,4 @@ export const PageHolder = styled.div`
   @media ${device.tablet} {
     width: ${size.mobileS};
   }
-  
 `;

@@ -39,6 +39,7 @@ interface FlexProps {
 interface CommonOblongContainerProps {
   borderColor?: string;
   background?: string;
+  margin?:string;
 }
 
 export const CommonDivider = styled.div<DividerProps>`
@@ -91,4 +92,5 @@ export const CommonOblongContainer = styled.div<CommonOblongContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: ${(props) => props.margin};
 `;

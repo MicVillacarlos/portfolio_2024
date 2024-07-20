@@ -19,13 +19,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <>
       <ProjectCardContainer
-        height="220px"
-        width="220px"
+        height="200px"
+        width="200px"
         borderColor="text"
         padding="10px"
         isColumn
         isColumnTablet
-        whileHover={{ scale: 1.02 }}
+        whileHover={{
+          scale: 1.02,
+          boxShadow:
+            "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;",
+        }}
         onClick={() => setSlectedCardId(id)}
       >
         <CommonFlexContainer width="100%" height="100%" background="text" />

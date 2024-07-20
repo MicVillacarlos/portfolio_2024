@@ -8,14 +8,13 @@ import {
   TitleText,
 } from "../components/Atoms/CommonText";
 import { useEffect, useState } from "react";
-import { PageHolder } from "../components/Template/CommonTemplateComponents";
+import { PageHolder } from "../components/Template/StyledCommonTemplateComponents";
 import {
   CommonDivider,
   CommonFlexContainer,
   CommonOblongContainer,
 } from "../components/Atoms/CommonAtomComponents";
 import {
-  CvIcon,
   InstagramIcon,
   LinkedInIcon,
   MoonIcon,
@@ -26,6 +25,7 @@ import { windowScreenSize } from "../utils/media_query";
 import WorkExperienceCard from "../components/Organisms/WorkExperienceCard/WorkExperienceCard";
 import { ProjectDataTypes, WorkExperienceCardTypes } from "../types/types";
 import ProjectCard from "../components/Organisms/WorkExperienceCard/ProjectCard";
+import StyledFooterComponent from "../components/Template/StyledFooterComponent";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -225,12 +225,12 @@ const IndexPage: React.FC<PageProps> = () => {
               // color="body"
               lineHeight={0.5}
             >
-              PROJECTS
+              WORK PROJECTS
             </CommonText>
           </CommonOblongContainer>
           <CommonFlexContainer
             marginTop="15px"
-            justify="start"
+            justify="center"
             gap="10px"
             isColumnTablet
           >
@@ -254,8 +254,20 @@ const IndexPage: React.FC<PageProps> = () => {
               </CommonText>
             </CommonOblongContainer>
           </CommonFlexContainer>
-          <CommonFlexContainer isColumn isColumnTablet align="end">
-            <CommonOblongContainer borderColor="red">
+          <CommonFlexContainer
+            isColumn
+            isColumnTablet
+            align="start"
+            borderLeft={
+              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
+            }
+          >
+            <CommonOblongContainer
+              borderColor="red"
+              margin={
+                windowScreenSize.tablet <= windowSize ? "0px 0px 0px 5px" : ""
+              }
+            >
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
@@ -267,6 +279,7 @@ const IndexPage: React.FC<PageProps> = () => {
             </CommonOblongContainer>
           </CommonFlexContainer>
         </CommonFlexContainer>
+        <StyledFooterComponent />
       </PageHolder>
     </ThemeProvider>
   );
@@ -274,4 +287,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>ECCENTRIC ENTHUSIAST</title>;
+export const Head: HeadFC = () => <title>Michael Villacarlos | Web Developer</title>;
