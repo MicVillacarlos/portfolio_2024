@@ -15,6 +15,8 @@ import {
   CommonOblongContainer,
 } from "../components/Atoms/CommonAtomComponents";
 import {
+  GithubIcon,
+  GmailIcon,
   InstagramIcon,
   LinkedInIcon,
   MoonIcon,
@@ -26,6 +28,8 @@ import WorkExperienceCard from "../components/Organisms/WorkExperienceCard/WorkE
 import { ProjectDataTypes, WorkExperienceCardTypes } from "../types/types";
 import ProjectCard from "../components/Organisms/WorkExperienceCard/ProjectCard";
 import StyledFooterComponent from "../components/Template/StyledFooterComponent";
+import { LinksSection } from "../components/Template/LinksSection";
+import { SwipeCarousel } from "../components/Template/SwipeCarousel";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -105,21 +109,9 @@ const IndexPage: React.FC<PageProps> = () => {
               </CommonAnchor>
             )}
           </div>
-          {/* Socials START---------- */}
-          <div>
-            <CommonFlexContainer>
-              <CommonAnchor>
-                <InstagramIcon />
-              </CommonAnchor>
-              <CommonAnchor>
-                <LinkedInIcon />
-              </CommonAnchor>
-            </CommonFlexContainer>
-          </div>
-          {/* Socials END ---------- */}
         </CommonFlexContainer>
 
-        <CommonFlexContainer isColumn isColumnTablet>
+        <CommonFlexContainer isColumn iscolumntablet>
           <TitleText>MICHAEL VILLACARLOS</TitleText>
           <CommonText
             margin="-12px 0px 5px 0px"
@@ -132,12 +124,12 @@ const IndexPage: React.FC<PageProps> = () => {
           </CommonText>
         </CommonFlexContainer>
 
-        <CommonFlexContainer isColumnTablet align="start">
+        <CommonFlexContainer iscolumntablet align="start">
           <CommonFlexContainer
             justify="start"
             align="start"
             isColumn
-            isColumnTablet
+            iscolumntablet
             width={windowScreenSize.tablet <= windowSize ? "60%" : "100%"}
             widthTablet="100%"
             padding="0px 10px 0px 0px"
@@ -146,11 +138,11 @@ const IndexPage: React.FC<PageProps> = () => {
             {/*-----------------Dummy Photo START----------------- */}
             <CommonFlexContainer
               background="text"
-              height="200px"
+              height="250px"
               margin="10px 0px"
             />
             {/*-----------------Dummy Photo END----------------- */}
-            <CommonOblongContainer borderColor="green">
+            <CommonOblongContainer bordercolor="green">
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
@@ -177,12 +169,12 @@ const IndexPage: React.FC<PageProps> = () => {
             align="start"
             width={windowScreenSize.tablet <= windowSize ? "40%" : "100%"}
             isColumn
-            isColumnTablet
+            iscolumntablet
             borderLeft={
               windowScreenSize.tablet <= windowSize ? "1px solid" : ""
             }
           >
-            <CommonOblongContainer borderColor="red">
+            <CommonOblongContainer bordercolor="red">
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
@@ -195,27 +187,29 @@ const IndexPage: React.FC<PageProps> = () => {
             {dummyData.map((item, index) => {
               return <WorkExperienceCard key={index} {...item} />;
             })}
-            <NorthEastArrowIcon
-              text={"View Full Résumé"}
-              width="16"
-              height="16"
-              hoverTextColor="red"
-              marginBottom="10px"
-              isTransformX
-            />
+            <a onClick={() => window.open("https://google.com", "_blank")}>
+              <NorthEastArrowIcon
+                text={"View Full Résumé"}
+                width="16"
+                height="16"
+                hoverTextColor="red"
+                marginBottom="10px"
+                isTransformX
+              />
+            </a>
           </CommonFlexContainer>
         </CommonFlexContainer>
 
         {/* ----------------------- PROJECTS ----------------------- */}
         <CommonFlexContainer
           isColumn
-          isColumnTablet
+          iscolumntablet
           align="start"
           marginTopTablet="0px"
         >
           <CommonDivider margin="10px 0px" isHideTablet />
           <CommonOblongContainer
-            borderColor="blue"
+            bordercolor="blue"
             // background="blue"
           >
             <CommonText
@@ -232,38 +226,51 @@ const IndexPage: React.FC<PageProps> = () => {
             marginTop="15px"
             justify="center"
             gap="10px"
-            isColumnTablet
+            iscolumntablet
           >
             {ProjectData.map((item, index) => {
               return <ProjectCard key={index} {...item} />;
             })}
           </CommonFlexContainer>
         </CommonFlexContainer>
-        {/* ----------------------- Technologies ----------------------- */}
-        <CommonDivider margin="20px 0px 0px 0px" isHideTablet />
-        <CommonFlexContainer marginTop="10px" isColumnTablet>
-          <CommonFlexContainer isColumn isColumnTablet align="start">
-            <CommonOblongContainer borderColor="red">
+        {/* ------------LIFE BEYOND TECH----------------- */}
+        <CommonDivider margin="20px 0px 10px 0px" isHideTablet />
+        <CommonFlexContainer iscolumntablet align="start">
+          <CommonFlexContainer
+            isColumn
+            iscolumntablet
+            width={"50%"}
+            widthTablet="100%"
+            align="start"
+            justify="center"
+            borderright={
+              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
+            }
+          >
+            <CommonOblongContainer bordercolor="red">
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
                 color="red"
                 lineHeight={0.5}
               >
-                TECHNOLOGIES
+                LIFE BEYOND TECH
               </CommonText>
             </CommonOblongContainer>
+            <SwipeCarousel />
           </CommonFlexContainer>
+
+          {/* ------------------ LINKS-------------------- */}
           <CommonFlexContainer
             isColumn
-            isColumnTablet
+            iscolumntablet
             align="start"
-            borderLeft={
-              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
-            }
+            marginTopTablet="20px"
+            width={"50%"}
+            widthTablet="100%"
           >
             <CommonOblongContainer
-              borderColor="red"
+              bordercolor="red"
               margin={
                 windowScreenSize.tablet <= windowSize ? "0px 0px 0px 5px" : ""
               }
@@ -274,17 +281,22 @@ const IndexPage: React.FC<PageProps> = () => {
                 color="red"
                 lineHeight={0.5}
               >
-                HOBBIES
+                LINKS
               </CommonText>
             </CommonOblongContainer>
+            <CommonFlexContainer justify="center">
+              <LinksSection />
+            </CommonFlexContainer>
           </CommonFlexContainer>
         </CommonFlexContainer>
-        <StyledFooterComponent />
       </PageHolder>
+      <StyledFooterComponent />
     </ThemeProvider>
   );
 };
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Michael Villacarlos | Web Developer</title>;
+export const Head: HeadFC = () => (
+  <title>Michael Villacarlos | Web Developer</title>
+);

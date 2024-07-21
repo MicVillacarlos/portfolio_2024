@@ -3,26 +3,26 @@ import { device } from "../../../utils/media_query";
 import { motion } from "framer-motion";
 
 interface ProjectCardProps {
-    justify?: string;
-    align?: string;
-    height?: string;
-    width?: string;
-    widthTablet?: string;
-    isColumn?: boolean;
-    isColumnTablet?: boolean;
-    isRoundedCorners?: boolean;
-    background?: string;
-    gap?: string;
-    margin?: string;
-    marginTop?: string;
-    marginTopTablet?: string;
-    padding?: string;
-    borderLeft?: string;
-    borderRight?: string;
-    borderTop?: string;
-    borderBottom?: string;
-    borderColor?: string;
-  }
+  justify?: string;
+  align?: string;
+  height?: string;
+  width?: string;
+  widthTablet?: string;
+  isColumn?: boolean;
+  iscolumntablet?: boolean;
+  isRoundedCorners?: boolean;
+  background?: string;
+  gap?: string;
+  margin?: string;
+  marginTop?: string;
+  marginTopTablet?: string;
+  padding?: string;
+  borderLeft?: string;
+  borderright?: string;
+  borderTop?: string;
+  borderBottom?: string;
+  bordercolor?: string;
+}
 
 export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
   gap: ${(props) => props.gap};
@@ -35,7 +35,7 @@ export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
   background-color: ${(props) =>
     props.background ? props.theme[props.background] : ""};
   margin: ${(props) => props.margin};
-  border-right: ${(props) => props.borderRight};
+  border-right: ${(props) => props.borderright};
   border-left: ${(props) => props.borderLeft};
   border-color: ${(props) => props.theme.text};
   padding: ${(props) => props.padding};
@@ -43,12 +43,12 @@ export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
   margin-top: ${(props) => props.marginTop};
   border-radius: ${(props) => props.isRoundedCorners && "10px"};
   border: ${(props) =>
-    props.borderColor && `1px solid ${props.theme[props.borderColor]}`};
+    props.bordercolor && `1px solid ${props.theme[props.bordercolor]}`};
 
   @media ${device.tablet} {
     margin-top: ${(props) =>
       props.marginTopTablet ? props.marginTopTablet : props.marginTop};
-    flex-direction: ${(props) => (props.isColumnTablet ? "column" : "row")};
+    flex-direction: ${(props) => (props.iscolumntablet ? "column" : "row")};
     width: ${(props) => props.widthTablet};
   }
 

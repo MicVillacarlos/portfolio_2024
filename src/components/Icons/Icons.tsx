@@ -12,13 +12,16 @@ interface IconProps {
   marginBottom?: string;
   isTransformX?: boolean;
   isNoHover?: boolean;
+  fontWeight?: number;
 }
 
-const IconWrapper = styled(motion.div)<IconProps>`
+const IconWrapper = styled(motion.div) <IconProps>`
+  font-weight: ${(props)=>props.fontWeight};
   padding-top: ${(props) => props.paddingTop};
   transition: fill 0.2s ease-in, color 0.2s ease-in;
   display: flex;
   align-items: center;
+  gap: 3px;
   margin-bottom: ${(props) => props.marginBottom};
 
   svg {
@@ -131,10 +134,11 @@ export const NorthEastArrowIcon = (props: IconProps) => {
 
 export const GatsbyIcon = (props: IconProps) => {
   return (
-    <IconWrapper isNoHover={props.isNoHover}>
+    <IconWrapper isNoHover={props.isNoHover} fontWeight={props.fontWeight}>
+      {props.text}
       <svg
-         height={props.height ? props.height : "24"}
-         width={props.width ? props.width : "24"}
+        height={props.height ? props.height : "24"}
+        width={props.width ? props.width : "24"}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -143,6 +147,78 @@ export const GatsbyIcon = (props: IconProps) => {
           d="M12 0C5.32267 0 0 5.31733 0 12C0 18.6827 5.31733 24 12 24C18.6827 24 24 18.6773 24 12C24 5.32267 18.6827 0 12 0ZM2.608 12.1013L11.8987 21.3867C6.784 21.392 2.608 17.216 2.608 12.1013ZM14.0853 21.184L2.82133 9.90933C3.76 5.73333 7.51467 2.60267 12 2.60267C15.008 2.61333 17.8347 4.04267 19.616 6.464L18.2613 7.61067C16.8267 5.50933 14.4427 4.256 11.8987 4.26667C8.64533 4.24533 5.74933 6.30933 4.69333 9.38133L14.5067 19.2C16.9067 18.3627 18.784 16.2773 19.3067 13.7707H15.2373V12H21.392C21.392 16.4853 18.2613 20.2453 14.0853 21.184Z"
           fill={props.color ? props.color : "#000000"}
         />
+      </svg>
+    </IconWrapper>
+  );
+};
+
+export const GithubIcon = (props: IconProps) => {
+  return (
+    <IconWrapper isNoHover={props.isNoHover}>
+      <svg
+        height={props.height ? props.height : "24"}
+        width={props.width ? props.width : "24"}
+        viewBox="0 0 20 20"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="Page-1" stroke="none" stroke-width="1">
+          <g
+            id="Dribbble-Light-Preview"
+            transform="translate(-140.000000, -7559.000000)"
+          >
+            <g id="icons" transform="translate(56.000000, 160.000000)">
+              <path
+                d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
+                id="github-[#142]"
+              ></path>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </IconWrapper>
+  );
+};
+
+export const FramerIcon = (props: IconProps) => {
+  return (
+    // <IconWrapper fontWeight={props.fontWeight} isNoHover={props.isNoHover}>
+    // {props.text}
+    <svg
+      height={props.height ? props.height : "24"}
+      width={props.width ? props.width : "24"}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="48" height="48" fill="none" />
+      <path d="M9.3,2H38.7V16.7H24Zm0,14.7H24L38.7,31.3H9.3Zm0,14.6H24V46Z" />
+    </svg>
+    // </IconWrapper>
+  );
+};
+
+export const GmailIcon = (props: IconProps) => {
+  return (
+    <IconWrapper>
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        height={props.height ? props.height : "24"}
+        width={props.width ? props.width : "24"}
+        viewBox="0 0 512 512"
+      >
+        <g id="7935ec95c421cee6d86eb22ecd11f972">
+          <path
+            d="M511.5,446.753V65.247H0.5v381.506H511.5L511.5,446.753
+		L511.5,446.753z M438.245,368.552v74.224H79.53v-70.247h0.615l1.816-0.605l134.664-108.435l40.74,34.519l36.176-31.78
+		L438.245,368.552L438.245,368.552L438.245,368.552z M438.245,355.428l-137.114-95.917l137.114-118.819V355.428L438.245,355.428
+		L438.245,355.428z M415.453,69.215L396.898,86.93l-8.811,8.569l-8.205,8.532l-8.514,7.944l-7.898,7.945l-7.6,7.33l-7.004,7.33
+		l-7.294,6.725l-6.688,6.725l-12.462,12.519l-11.867,11.298l-5.457,5.197l-4.871,5.188l-5.16,4.285l-4.574,4.266l-8.195,7.954
+		l-3.959,3.354l-3.344,3.371l-3.344,2.72l-2.748,3.074l-5.16,4.284l-2.123,1.509l-1.527,1.845l-1.816,0.912l-1.221,1.229
+		l-1.518,1.211L101.102,68.609L415.453,69.215L415.453,69.215L415.453,69.215z M208.727,256.764L79.53,360.001l0.298-212.893
+		L208.727,256.764L208.727,256.764L208.727,256.764z"
+          ></path>
+        </g>
       </svg>
     </IconWrapper>
   );

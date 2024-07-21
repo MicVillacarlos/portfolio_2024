@@ -21,10 +21,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <ProjectCardContainer
         height="200px"
         width="200px"
-        borderColor="text"
+        bordercolor="text"
         padding="10px"
         isColumn
-        isColumnTablet
+        iscolumntablet
         whileHover={{
           scale: 1.02,
           boxShadow:

@@ -11,17 +11,18 @@ interface DividerProps {
 }
 
 interface GhostButtonProps {
-  isHover?:boolean
+  isHover?: boolean;
 }
 
 interface FlexProps {
   justify?: string;
   align?: string;
+  fontSize?: string;
   height?: string;
   width?: string;
   widthTablet?: string;
   isColumn?: boolean;
-  isColumnTablet?: boolean;
+  iscolumntablet?: boolean;
   isRoundedCorners?: boolean;
   background?: string;
   gap?: string;
@@ -30,16 +31,17 @@ interface FlexProps {
   marginTopTablet?: string;
   padding?: string;
   borderLeft?: string;
-  borderRight?: string;
+  borderright?: string;
   borderTop?: string;
   borderBottom?: string;
-  borderColor?: string;
+  bordercolor?: string;
+  flexshrink?: number;
 }
 
 interface CommonOblongContainerProps {
-  borderColor?: string;
+  bordercolor?: string;
   background?: string;
-  margin?:string;
+  margin?: string;
 }
 
 export const CommonDivider = styled.div<DividerProps>`
@@ -64,18 +66,23 @@ export const CommonFlexContainer = styled.div<FlexProps>`
   background-color: ${(props) =>
     props.background ? props.theme[props.background] : ""};
   margin: ${(props) => props.margin};
-  border-right: ${(props) => props.borderRight};
+  border-right: ${(props) => props.borderright};
   border-left: ${(props) => props.borderLeft};
   border-color: ${(props) => props.theme.text};
   padding: ${(props) => props.padding};
   word-break: break-word;
   margin-top: ${(props) => props.marginTop};
   border-radius: ${(props) => props.isRoundedCorners && "10px"};
-  border: ${(props) => props.borderColor && `1px solid ${props.theme[props.borderColor]}`};
+  border: ${(props) =>
+    props.bordercolor && `1px solid ${props.theme[props.bordercolor]}`};
+  font-size: ${(props) =>
+    props.fontSize && props.theme.fontSize[props.fontSize]};
+  flex-shrink: ${(props) => props.flexshrink};
 
   @media ${device.tablet} {
-    margin-top: ${(props) => props.marginTopTablet ? props.marginTopTablet : props.marginTop};
-    flex-direction: ${(props) => (props.isColumnTablet ? "column" : "row")};
+    margin-top: ${(props) =>
+      props.marginTopTablet ? props.marginTopTablet : props.marginTop};
+    flex-direction: ${(props) => (props.iscolumntablet ? "column" : "row")};
     width: ${(props) => props.widthTablet};
   }
 `;
@@ -86,8 +93,8 @@ export const CommonOblongContainer = styled.div<CommonOblongContainerProps>`
   background-color: ${(props) =>
     props.background && props.theme[props.background]};
   border: ${(props) =>
-    props.borderColor
-      ? `1px solid ${props.theme[props.borderColor]}`
+    props.bordercolor
+      ? `1px solid ${props.theme[props.bordercolor]}`
       : `1px solid ${props.theme.text}`};
   display: flex;
   align-items: center;

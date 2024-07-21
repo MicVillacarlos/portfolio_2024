@@ -57,8 +57,11 @@ export const CommonText = styled.p<TextProps>`
   }
 `;
 
-export const CommonAnchor = styled.a`
+export const CommonAnchor = styled.a<TextProps>`
   font-family: Helvetica, sans-serif;
+  font-weight: ${(props) => props.fontWeight};
+  text-decoration: none;
+  color: ${(props)=>props.theme.text};
   :hover {
     cursor: pointer;
   }
