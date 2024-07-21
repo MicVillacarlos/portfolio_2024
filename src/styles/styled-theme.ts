@@ -23,6 +23,7 @@ const themeColors = {
     blue: "#3D87AA",
     yellow: "#C1A238",
     green: "#325234",
+    gray: "#B2BEB5",
   },
   dark: {
     body: "#0b0904",
@@ -34,6 +35,7 @@ const themeColors = {
     blue: "#3D87AA",
     yellow: "#C1A238",
     green: "#6F8570",
+    gray: "#B2BEB5",
   },
 };
 

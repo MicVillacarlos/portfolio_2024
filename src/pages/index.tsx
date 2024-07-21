@@ -29,7 +29,7 @@ import { ProjectDataTypes, WorkExperienceCardTypes } from "../types/types";
 import ProjectCard from "../components/Organisms/WorkExperienceCard/ProjectCard";
 import StyledFooterComponent from "../components/Template/StyledFooterComponent";
 import { LinksSection } from "../components/Template/LinksSection";
-import { SwipeCarousel } from "../components/Template/SwipeCarousel";
+import { SwipeCarousel } from "../components/Template/Carousel/SwipeCarousel";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -243,6 +243,7 @@ const IndexPage: React.FC<PageProps> = () => {
             widthTablet="100%"
             align="start"
             justify="center"
+            marginTopTablet="20px"
             borderright={
               windowScreenSize.tablet <= windowSize ? "1px solid" : ""
             }
@@ -257,7 +258,17 @@ const IndexPage: React.FC<PageProps> = () => {
                 LIFE BEYOND TECH
               </CommonText>
             </CommonOblongContainer>
-            <SwipeCarousel />
+
+            <CommonFlexContainer
+              isColumn
+              gap="10px"
+              marginTop="10px"
+              marginTopTablet="10px"
+              justify="center"
+              iscolumntablet
+            >
+              <SwipeCarousel />
+            </CommonFlexContainer>
           </CommonFlexContainer>
 
           {/* ------------------ LINKS-------------------- */}
