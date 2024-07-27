@@ -23,9 +23,9 @@ export const PageHolder = styled.div`
 
 export const StyledGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: 20px;
+  /* gap: 5px; */
 `;
 
 export const StyledGridItem = styled.div`

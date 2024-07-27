@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { CommonFlexContainer } from "../../Atoms/CommonAtomComponents";
-import { ProjectCardContainer } from "./StyledComponents";
+import { ProjectCardContainer, ProjectCardImageContainer } from "./StyledComponents";
 import { AnimatePresence } from "framer-motion";
 
 interface ProjectCardProps {
   id: number;
   title: string;
   description: string;
+  imageLink?:string
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   id,
   description,
+  imageLink
 }) => {
   const [selectedCardId, setSlectedCardId] = useState<number | string>();
 
@@ -32,7 +34,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         }}
         onClick={() => setSlectedCardId(id)}
       >
-        <CommonFlexContainer width="100%" height="100%" background="text" />
+        <ProjectCardImageContainer>
+          <img src={imageLink} alt={`${title}_img`} />
+        </ProjectCardImageContainer>
         <CommonFlexContainer marginTop="5px" justify="start">
           {title}
         </CommonFlexContainer>

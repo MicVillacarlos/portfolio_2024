@@ -56,3 +56,14 @@ export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
     cursor: pointer;
   }
 `;
+
+export const ProjectCardImageContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  border: ${(props)=>`1px solid ${props.theme.text}`};
+  img {
+    height: 100%;
+    width: 100%;
+  }
+`;

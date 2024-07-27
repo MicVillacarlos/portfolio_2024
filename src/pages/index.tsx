@@ -15,10 +15,6 @@ import {
   CommonOblongContainer,
 } from "../components/Atoms/CommonAtomComponents";
 import {
-  GithubIcon,
-  GmailIcon,
-  InstagramIcon,
-  LinkedInIcon,
   MoonIcon,
   NorthEastArrowIcon,
   SunIcon,
@@ -49,7 +45,7 @@ const IndexPage: React.FC<PageProps> = () => {
       companyName: "Ark Creative Web Studio Inc.",
       startDate: "May 2023",
       endDate: "Present",
-      position: "Fullstack Junior Web Developer",
+      position: "Fullstack Web Developer",
       description:
         "Worked on various projects involving web development and software engineering.",
       technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
@@ -58,7 +54,7 @@ const IndexPage: React.FC<PageProps> = () => {
       companyName: "AJIO IT Solutions",
       startDate: "September 2022",
       endDate: "April 2023",
-      position: "Frontend Junior Web Developer",
+      position: "Frontend Web Developer",
       description:
         "Worked on various projects involving web development and software engineering.",
       technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
@@ -69,24 +65,28 @@ const IndexPage: React.FC<PageProps> = () => {
     {
       id: 1,
       title: "GrowerStats",
+      imageLink: "https://i.postimg.cc/3Jttftky/growerstats.png",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
     },
     {
       id: 2,
       title: "Secret Dates",
+      imageLink: "https://i.postimg.cc/VLf7FxkQ/secretdates.png",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
     },
     {
       id: 3,
-      title: "KUHL Japan",
+      title: "KUHL Car Simulation",
+      imageLink: "https://i.postimg.cc/9f71MVJT/kuhl.png",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
     },
     {
       id: 4,
       title: "My HealthNotes",
+      imageLink: "https://i.postimg.cc/3ws4ZNq5/myhealthnotes.png",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
     },

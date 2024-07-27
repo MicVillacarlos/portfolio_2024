@@ -5,6 +5,7 @@ import {
   GithubIcon,
   GmailIcon,
   InstagramIcon,
+  LeetCodeIcon,
   LinkedInIcon,
 } from "../Icons/Icons";
 
@@ -13,42 +14,27 @@ export const LinksSection = () => {
     <StyledGrid>
       <StyledGridItem>
         <CommonAnchor>
-          <InstagramIcon width="50" height="50" />
+          <InstagramIcon width="40" height="40" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
         <CommonAnchor>
-          <LinkedInIcon width="50" height="50" />
+          <LinkedInIcon width="40" height="40" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
         <CommonAnchor>
-          <GithubIcon width="35" height="35" />
+          <GithubIcon width="25" height="25" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
         <CommonAnchor>
-          <GmailIcon width="38" height="38" />
+          <GmailIcon width="28" height="28" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
         <CommonAnchor>
-          <InstagramIcon width="50" height="50" />
-        </CommonAnchor>
-      </StyledGridItem>
-      <StyledGridItem>
-        <CommonAnchor>
-          <LinkedInIcon width="50" height="50" />
-        </CommonAnchor>
-      </StyledGridItem>
-      <StyledGridItem>
-        <CommonAnchor>
-          <GithubIcon width="35" height="35" />
-        </CommonAnchor>
-      </StyledGridItem>
-      <StyledGridItem>
-        <CommonAnchor>
-          <GmailIcon width="38" height="38" />
+          <LeetCodeIcon width="28" height="28" />
         </CommonAnchor>
       </StyledGridItem>
     </StyledGrid>
