@@ -22,7 +22,7 @@ import {
 import { windowScreenSize } from "../utils/media_query";
 import WorkExperienceCard from "../components/Organisms/WorkExperienceCard/WorkExperienceCard";
 import { ProjectDataTypes, WorkExperienceCardTypes } from "../types/types";
-import ProjectCard from "../components/Organisms/WorkExperienceCard/ProjectCard";
+import ProjectCard from "../components/Organisms/ProjectCard";
 import StyledFooterComponent from "../components/Template/StyledFooterComponent";
 import { LinksSection } from "../components/Template/LinksSection";
 import { SwipeCarousel } from "../components/Template/Carousel/SwipeCarousel";
@@ -298,7 +298,6 @@ const IndexPage: React.FC<PageProps> = () => {
             <CommonFlexContainer justify="center">
               <LinksSection />
             </CommonFlexContainer>
-
           </CommonFlexContainer>
         </CommonFlexContainer>
       </PageHolder>

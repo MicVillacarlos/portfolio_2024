@@ -1,23 +1,27 @@
 import React, { useState } from "react";
-import { CommonFlexContainer } from "../../Atoms/CommonAtomComponents";
-import { ProjectCardContainer, ProjectCardImageContainer } from "./StyledComponents";
+import { CommonFlexContainer } from "../Atoms/CommonAtomComponents";
+import {
+  ProjectCardContainer,
+  ProjectCardImageContainer,
+} from "./StyledComponents";
 import { AnimatePresence } from "framer-motion";
-import { NorthEastArrowIcon } from "../../Icons/Icons";
+import { NorthEastArrowIcon } from "../Icons/Icons";
+import Modal from "./Modal/Modal";
 
 interface ProjectCardProps {
   id: number;
   title: string;
   description: string;
-  imageLink?:string
+  imageLink?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   id,
   description,
-  imageLink
+  imageLink,
 }) => {
-  const [selectedCardId, setSlectedCardId] = useState<number | string>();
+  const [selectedCardId, setSlectedCardId] = useState<number | string>("");
   const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
 
   return (
@@ -40,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <ProjectCardImageContainer isMouseOver={isMouseHover}>
           {isMouseHover && (
-            <a onClick={() => window.open("https://google.com", "_blank")}>
+            <a onClick={() => setSlectedCardId(id)}>
               <NorthEastArrowIcon
                 text={"View Details"}
                 width="16"
@@ -48,6 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 hoverTextColor="blue"
                 marginBottom="10px"
                 isTransformX
+                
               />
             </a>
           )}
@@ -57,6 +62,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {title}
         </CommonFlexContainer>
       </ProjectCardContainer>
+      <Modal
+        setIsShow={setSlectedCardId}
+        isShow={selectedCardId ? true : false}
+      />
     </>
   );
 };

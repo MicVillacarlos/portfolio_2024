@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../../utils/media_query";
+import { device } from "../../utils/media_query";
 import { motion } from "framer-motion";
 
 interface ProjectCardProps {
@@ -71,15 +71,29 @@ export const ProjectCardImageContainer = styled.div<ProjectCardProps>`
 
   a {
     position: relative;
-    z-index: 2;
-    display: ${(props)=> !props.isMouseOver && "none"};
+    z-index: 1;
+    display: ${(props) => !props.isMouseOver && "none"};
   }
 
   img {
     position: absolute;
-    z-index: 1; 
-    opacity:${(props)=> props.isMouseOver && 0.2};
+    z-index: 0;
+    opacity: ${(props) => props.isMouseOver && 0.2};
     height: 100%;
     width: 100%;
   }
+`;
+
+
+export const BackdropContainer = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left:0;
+  height: 100vh;
+  width: 100vw;
+  background-color: ${(props) => props.theme.text};
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
 `;
