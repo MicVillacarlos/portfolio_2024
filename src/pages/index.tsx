@@ -298,6 +298,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <CommonFlexContainer justify="center">
               <LinksSection />
             </CommonFlexContainer>
+
           </CommonFlexContainer>
         </CommonFlexContainer>
       </PageHolder>

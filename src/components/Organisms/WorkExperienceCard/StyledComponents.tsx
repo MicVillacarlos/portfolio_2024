@@ -22,6 +22,7 @@ interface ProjectCardProps {
   borderTop?: string;
   borderBottom?: string;
   bordercolor?: string;
+  isMouseOver?: boolean;
 }
 
 export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
@@ -57,12 +58,27 @@ export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
   }
 `;
 
-export const ProjectCardImageContainer = styled.div`
+export const ProjectCardImageContainer = styled.div<ProjectCardProps>`
   height: 100%;
   width: 100%;
-  overflow: auto;
-  border: ${(props)=>`1px solid ${props.theme.text}`};
+  overflow: hidden;
+  border: ${(props) => `1px solid ${props.theme.text}`};
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    position: relative;
+    z-index: 2;
+    display: ${(props)=> !props.isMouseOver && "none"};
+  }
+
   img {
+    position: absolute;
+    z-index: 1; 
+    opacity:${(props)=> props.isMouseOver && 0.2};
     height: 100%;
     width: 100%;
   }

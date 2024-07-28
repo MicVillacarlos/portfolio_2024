@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CommonFlexContainer } from "../../Atoms/CommonAtomComponents";
 import { ProjectCardContainer, ProjectCardImageContainer } from "./StyledComponents";
 import { AnimatePresence } from "framer-motion";
+import { NorthEastArrowIcon } from "../../Icons/Icons";
 
 interface ProjectCardProps {
   id: number;
@@ -17,6 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   imageLink
 }) => {
   const [selectedCardId, setSlectedCardId] = useState<number | string>();
+  const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
 
   return (
     <>
@@ -28,24 +30,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         isColumn
         iscolumntablet
         whileHover={{
-          scale: 1.02,
+          scale: 1.04,
           boxShadow:
             "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;",
         }}
         onClick={() => setSlectedCardId(id)}
+        onMouseOver={() => setIsMouseHover(true)}
+        onMouseOut={() => setIsMouseHover(false)}
       >
-        <ProjectCardImageContainer>
+        <ProjectCardImageContainer isMouseOver={isMouseHover}>
+          {isMouseHover && (
+            <a onClick={() => window.open("https://google.com", "_blank")}>
+              <NorthEastArrowIcon
+                text={"View Details"}
+                width="16"
+                height="16"
+                hoverTextColor="blue"
+                marginBottom="10px"
+                isTransformX
+              />
+            </a>
+          )}
           <img src={imageLink} alt={`${title}_img`} />
         </ProjectCardImageContainer>
         <CommonFlexContainer marginTop="5px" justify="start">
           {title}
         </CommonFlexContainer>
       </ProjectCardContainer>
-      {/* {selectedCardId && (
-        <AnimatePresence>
-          <CommonFlexContainer>{description}</CommonFlexContainer>
-        </AnimatePresence>
-      )} */}
     </>
   );
 };
