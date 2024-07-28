@@ -4,11 +4,11 @@ import { ModalContainer } from "../StyledComponents";
 import { CommonText } from "../../Atoms/CommonText";
 
 interface ModalProps {
-  setIsShow: Dispatch<SetStateAction<number | string>>;
+  closeModal: ()=>void;
   title: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ setIsShow, title }) => {
+const Modal: React.FC<ModalProps> = ({ closeModal, title }) => {
 
   const dropIn = {
     hidden: { y: "-100vh", opacity: 0 },
@@ -27,9 +27,7 @@ const Modal: React.FC<ModalProps> = ({ setIsShow, title }) => {
 
   return (
     <Backdrop
-      onClick={() => {
-        setIsShow("");
-      }}
+      onClick={closeModal}
     >
       <ModalContainer
         variants={dropIn}

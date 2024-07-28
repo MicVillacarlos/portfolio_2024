@@ -16,9 +16,16 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, imageLink }) => {
-  const [selectedCardId, setSlectedCardId] = useState<number | string>("");
+  const [isViewDetails, setIsViewDetails] = useState<boolean>(false);
   const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
 
+  const onOpenModal = () => {
+    setIsViewDetails(true);
+  }
+
+  const onCloseModal = () => {
+    setIsViewDetails(false);
+  }
   return (
     <>
       <ProjectCardContainer
@@ -33,13 +40,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, imageLink }) => {
           boxShadow:
             "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;",
         }}
-        onClick={() => setSlectedCardId(id)}
+        onClick={() => setIsViewDetails(true)}
         onMouseOver={() => setIsMouseHover(true)}
         onMouseOut={() => setIsMouseHover(false)}
       >
         <ProjectCardImageContainer isMouseOver={isMouseHover}>
           {isMouseHover && (
-            <a onClick={() => setSlectedCardId(id)}>
+            <a onClick={onOpenModal}>
               <NorthEastArrowIcon
                 text={"View Details"}
                 width="16"
@@ -57,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, imageLink }) => {
         </CommonFlexContainer>
       </ProjectCardContainer>
       <AnimatePresence initial={false} onExitComplete={() => null}>
-        {selectedCardId && <Modal title={title} setIsShow={setSlectedCardId} />}
+        {isViewDetails && <Modal title={title} closeModal={onCloseModal}/>}
       </AnimatePresence>
     </>
   );
