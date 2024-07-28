@@ -84,16 +84,22 @@ export const ProjectCardImageContainer = styled.div<ProjectCardProps>`
   }
 `;
 
-
 export const BackdropContainer = styled(motion.div)`
   position: fixed;
   top: 0;
-  left:0;
+  left: 0;
   height: 100vh;
   width: 100vw;
-  background-color: ${(props) => props.theme.text};
-  display:flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  z-index: 2;
+`;
+
+export const ModalContainer = styled(motion.div)`
+  padding: 20px;
+  width: clamp(50%, 700px, 90%);
+  height: min(50%, 500px);
+  background-color: ${(props) => props.theme.body};
 `;

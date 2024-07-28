@@ -15,12 +15,7 @@ interface ProjectCardProps {
   imageLink?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  title,
-  id,
-  description,
-  imageLink,
-}) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, imageLink }) => {
   const [selectedCardId, setSlectedCardId] = useState<number | string>("");
   const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
 
@@ -52,7 +47,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 hoverTextColor="blue"
                 marginBottom="10px"
                 isTransformX
-                
               />
             </a>
           )}
@@ -62,10 +56,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {title}
         </CommonFlexContainer>
       </ProjectCardContainer>
-      <Modal
-        setIsShow={setSlectedCardId}
-        isShow={selectedCardId ? true : false}
-      />
+      <AnimatePresence initial={false} onExitComplete={() => null}>
+        {selectedCardId && <Modal title={title} setIsShow={setSlectedCardId} />}
+      </AnimatePresence>
     </>
   );
 };

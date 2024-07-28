@@ -20,7 +20,7 @@ const themeColors = {
     transparent: "rgba(0,0,0,0.5)",
     //colors -------
     red: "#BE3D20",
-    blue: "#3D87AA",
+    blue: "#002D62",
     yellow: "#C1A238",
     green: "#325234",
     gray: "#B2BEB5",
