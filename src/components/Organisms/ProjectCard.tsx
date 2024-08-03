@@ -43,26 +43,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, imageLink }) => {
         }}
         onMouseOver={() => setIsMouseHover(true)}
         onMouseOut={() => setIsMouseHover(false)}
+        onClick={onOpenModal}
       >
         <ProjectCardImageContainer isMouseOver={isMouseHover}>
           <img src={imageLink} alt={`${title}_img`} />
         </ProjectCardImageContainer>
         <CommonFlexContainer marginTop="5px" justify="start">
-          {!isMouseHover ? (
-            title
-          ) : (
-            <a
-              onClick={onOpenModal}
-            >
-                <NorthEastArrowIcon
-                text={title}
-                width="16"
-                height="16"
-                hoverTextColor="yellow"
-                isTransformX
-              />
-            </a>
-          )}
+          {title}
         </CommonFlexContainer>
       </ProjectCardContainer>
       <AnimatePresence initial={false} onExitComplete={() => null}>

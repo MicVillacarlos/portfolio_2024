@@ -39,8 +39,7 @@ export const StyledGridItem = styled.div`
 export const SwipeCarouselContainer = styled.div`
   overflow: hidden;
   height: 100%;
-  width: 350px;
-  background-color: red;
+  width: 370px;
   padding: 5px;
 
   @media ${device.tablet} {
@@ -52,7 +51,6 @@ export const SwipeCarouselChildContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   cursor: grab;
-  background-color: "green";
 
   :active{
     cursor: grabbing;

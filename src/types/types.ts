@@ -14,3 +14,8 @@ export type ProjectDataTypes = {
   description: string;
   imageLink?: string;
 }
+
+export type BlogCardType = {
+  title: string;
+  description: string;
+}

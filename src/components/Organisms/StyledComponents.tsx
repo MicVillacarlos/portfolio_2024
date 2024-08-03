@@ -28,6 +28,7 @@ interface ProjectCardProps {
 export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
   gap: ${(props) => props.gap};
   display: flex;
+
   width: ${(props) => (props.width ? props.width : "100%")};
   height: ${(props) => props.height};
   flex-direction: ${(props) => (props.isColumn ? "column" : "row")};
@@ -46,12 +47,17 @@ export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
   border: ${(props) =>
   props.bordercolor && `1px solid ${props.theme[props.bordercolor]}`};
   border-radius: 10px;
+  /* flex-shrink:0; */
 
   @media ${device.tablet} {
     margin-top: ${(props) =>
       props.marginTopTablet ? props.marginTopTablet : props.marginTop};
     flex-direction: ${(props) => (props.iscolumntablet ? "column" : "row")};
     width: ${(props) => props.widthTablet};
+  }
+
+  img{
+    object-fit: cover;
   }
 
   :hover {
@@ -65,6 +71,7 @@ export const ProjectCardImageContainer = styled.div<ProjectCardProps>`
   overflow: hidden;
   border: ${(props) => `1px solid ${props.theme.text}`};
   position: relative;
+  align-self: center;
 
   display: flex;
   align-items: center;

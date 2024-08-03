@@ -3,27 +3,21 @@ import {
   SwipeCarouselChildContainer,
   SwipeCarouselContainer,
 } from "../StyledCommonTemplateComponents";
-import { CommonFlexContainer } from "../../Atoms/CommonAtomComponents";
 import { useMotionValue } from "framer-motion";
 import { Dots } from "./Dots";
+import BlogCard from "../BlogCard/BlogCard";
 
 const DRAG_BUFFER = 50;
 
 const objectData = [
   {
-    title: "Hello1",
+    title:
+      "Implementing Payment Transactions with Stripe in Node.js and React.js: Holding, Confirming, and Declining Payments",
+    description: "Lorem Ipsum",
   },
   {
     title: "Hello2",
-  },
-  {
-    title: "Hello3",
-  },
-  {
-    title: "Hello4",
-  },
-  {
-    title: "Hello5",
+    description: "Lorem Ipsum",
   },
 ];
 
@@ -66,14 +60,11 @@ export const SwipeCarousel = () => {
         >
           {objectData.map((item: any, index: number) => {
             return (
-              <CommonFlexContainer
-                flexshrink={0}
-                height="200px"
-                width="100%"
+              <BlogCard
+                description=""
+                title={item.title}
                 key={index}
-              >
-                {item.title}!
-              </CommonFlexContainer>
+              />
             );
           })}
         </SwipeCarouselChildContainer>
