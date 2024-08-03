@@ -130,7 +130,7 @@ const IndexPage: React.FC<PageProps> = () => {
             align="start"
             isColumn
             iscolumntablet
-            width={windowScreenSize.tablet <= windowSize ? "60%" : "100%"}
+            width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             widthTablet="100%"
             padding="0px 10px 0px 0px"
             marginTop="10px"
@@ -167,7 +167,7 @@ const IndexPage: React.FC<PageProps> = () => {
             }
             justify="start"
             align="start"
-            width={windowScreenSize.tablet <= windowSize ? "40%" : "100%"}
+            width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             isColumn
             iscolumntablet
             borderLeft={
@@ -192,14 +192,13 @@ const IndexPage: React.FC<PageProps> = () => {
                 text={"View Full Résumé"}
                 width="16"
                 height="16"
-                hoverTextColor="red"
+                hoverTextColor="yellow"
                 marginBottom="10px"
                 isTransformX
               />
             </a>
           </CommonFlexContainer>
         </CommonFlexContainer>
-
         {/* ----------------------- PROJECTS ----------------------- */}
         <CommonFlexContainer
           isColumn
@@ -207,7 +206,7 @@ const IndexPage: React.FC<PageProps> = () => {
           align="start"
           marginTopTablet="0px"
         >
-          <CommonDivider margin="10px 0px" isHideTablet />
+          <CommonDivider margin="25px 0px" isHideTablet />
           <CommonOblongContainer
             bordercolor="yellow"
             // background="blue"
@@ -222,7 +221,7 @@ const IndexPage: React.FC<PageProps> = () => {
             </CommonText>
           </CommonOblongContainer>
           <CommonFlexContainer
-            marginTop="15px"
+            marginTop="10px"
             justify="center"
             gap="10px"
             iscolumntablet
@@ -232,20 +231,17 @@ const IndexPage: React.FC<PageProps> = () => {
             })}
           </CommonFlexContainer>
         </CommonFlexContainer>
-        {/* ------------LIFE BEYOND TECH----------------- */}
-        <CommonDivider margin="20px 0px 10px 0px" isHideTablet />
+        {/* ------------BLOGS----------------- */}
+        <CommonDivider margin="25px 0px" isHideTablet />
         <CommonFlexContainer iscolumntablet align="start">
           <CommonFlexContainer
             isColumn
             iscolumntablet
-            width={"50%"}
+            width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             widthTablet="100%"
             align="start"
             justify="center"
             marginTopTablet="20px"
-            borderright={
-              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
-            }
           >
             <CommonOblongContainer bordercolor="yellow">
               <CommonText
@@ -274,10 +270,18 @@ const IndexPage: React.FC<PageProps> = () => {
           <CommonFlexContainer
             isColumn
             iscolumntablet
+            justify="start"
             align="start"
+            height="300px"
             marginTopTablet="20px"
-            width={"50%"}
+            width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             widthTablet="100%"
+            borderLeft={
+              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
+            }
+            padding={
+              windowScreenSize.tablet <= windowSize ? "0px 0px 0px 3px" : ""
+            }
           >
             <CommonOblongContainer
               bordercolor="yellow"

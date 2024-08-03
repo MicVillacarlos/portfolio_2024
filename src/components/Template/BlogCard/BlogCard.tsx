@@ -22,7 +22,7 @@ const BlogCard = ({ title, description }: BlogCardType) => {
           text={"View Full Article"}
           width="16"
           height="16"
-          hoverTextColor="red"
+          hoverTextColor="yellow"
           marginBottom="10px"
           isTransformX
           fontSize="xxSmall"

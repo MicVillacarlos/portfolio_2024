@@ -16,7 +16,8 @@ const objectData = [
     description: "Lorem Ipsum",
   },
   {
-    title: "Hello2",
+    title:
+      "Implementing Payment Transactions with Stripe in Node.js and React.js: Holding, Confirming, and Declining Payments",
     description: "Lorem Ipsum",
   },
 ];
@@ -48,7 +49,7 @@ export const SwipeCarousel = () => {
             x: dragX,
           }}
           animate={{
-            translateX: `-${objectIndex * 100}%`,
+            translateX: `-${objectIndex * 105}%`,
           }}
           onDragEnd={onDragEnd}
           transition={{

@@ -116,4 +116,5 @@ export const ModalContainer = styled(motion.div)`
   width: clamp(50%, 700px, 90%);
   height: min(50%, 500px);
   background-color: ${(props) => props.theme.body};
+  border: ${(props)=> `1px solid ${props.theme.text}`};
 `;

@@ -13,7 +13,6 @@ interface TextProps {
 }
 
 export const TitleText = styled.h1<TextProps>`
-  font-family: Helvetica, sans-serif;
   font-weight: 900;
   font-size: ${(props) => props.theme.fontSize.title};
   color: ${(props) => props.theme.text};

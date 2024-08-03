@@ -26,7 +26,8 @@ const IconWrapper = styled(motion.div)<IconProps>`
   align-items: center;
   gap: 3px;
   margin-bottom: ${(props) => props.marginBottom};
-  
+  align-items: end;
+
   svg {
     fill: ${(props) =>
       props.color ? props.theme[props.color] : props.theme.text};
@@ -45,7 +46,7 @@ const IconWrapper = styled(motion.div)<IconProps>`
         props.isNoHover
           ? ""
           : props.isTransformX
-          ? `translateY(-2px) translateX(2px)`
+          ? `translateY(-3px) translateX(2px)`
           : `translateY(-2px)`};
     }
   }
