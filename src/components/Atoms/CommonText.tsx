@@ -22,13 +22,13 @@ export const TitleText = styled.h1<TextProps>`
   word-wrap: break-word;
 
   @media ${device.laptop} {
-    font-size: ${(props) => props.theme.fontSize.xxxLarge};
+    font-size: ${(props) => props.theme.fontSize.title};
   }
 
   @media ${device.tablet} {
     text-align: center;
-    line-height: 25px;
-    font-size: ${(props) => props.theme.fontSize.xxLarge};
+    line-height: 45px;
+    font-size: ${(props) => props.theme.fontSize.titleS};
   }
 `;
 
@@ -40,7 +40,7 @@ export const CommonText = styled.p<TextProps>`
   font-family:${(props) =>
     props.isTitleFont
       ? "Helvetica, sans-serif"
-      : "Playfair Display, Times New Roman , Times, serif"};
+      : "Gideon Roman, Times New Roman , Times, serif"};
   font-size: ${(props) =>
     props.fontSize
       ? props.theme.fontSize[props.fontSize]

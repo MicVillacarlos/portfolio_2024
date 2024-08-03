@@ -44,7 +44,8 @@ export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
   margin-top: ${(props) => props.marginTop};
   border-radius: ${(props) => props.isRoundedCorners && "10px"};
   border: ${(props) =>
-    props.bordercolor && `1px solid ${props.theme[props.bordercolor]}`};
+  props.bordercolor && `1px solid ${props.theme[props.bordercolor]}`};
+  border-radius: 10px;
 
   @media ${device.tablet} {
     margin-top: ${(props) =>
@@ -75,10 +76,16 @@ export const ProjectCardImageContainer = styled.div<ProjectCardProps>`
     display: ${(props) => !props.isMouseOver && "none"};
   }
 
+  img{
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+  }
+
   img {
     position: absolute;
     z-index: 0;
-    opacity: ${(props) => props.isMouseOver && 0.2};
+    -webkit-filter: ${(props) => props.isMouseOver && "grayscale(0%)"};
+    filter: ${(props) => props.isMouseOver && "grayscale(0%)"};
     height: 100%;
     width: 100%;
   }

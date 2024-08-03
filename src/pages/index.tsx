@@ -65,28 +65,28 @@ const IndexPage: React.FC<PageProps> = () => {
     {
       id: 1,
       title: "GrowerStats",
-      imageLink: "https://i.postimg.cc/3Jttftky/growerstats.png",
+      imageLink: "https://lh3.googleusercontent.com/d/1r-8P9YvJqzLn9AIn6EmGCDxR9cFKIMm9",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
     },
     {
       id: 2,
       title: "Secret Dates",
-      imageLink: "https://i.postimg.cc/VLf7FxkQ/secretdates.png",
+      imageLink: "https://lh3.googleusercontent.com/d/1kv3ixfDcaehCAwjMdXntnGKLH4R0_YfL",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
     },
     {
       id: 3,
       title: "KUHL Car Simulation",
-      imageLink: "https://i.postimg.cc/9f71MVJT/kuhl.png",
+      imageLink: "https://lh3.googleusercontent.com/d/1pB1yqlc-z1Kam8_Pw8n0Gxt7cCt-6034",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
     },
     {
       id: 4,
       title: "My HealthNotes",
-      imageLink: "https://i.postimg.cc/3ws4ZNq5/myhealthnotes.png",
+      imageLink: "https://lh3.googleusercontent.com/d/15kkl17miERM--Bou8Fa4mj8cFHkv3xpI",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
     },
@@ -142,11 +142,11 @@ const IndexPage: React.FC<PageProps> = () => {
               margin="10px 0px"
             />
             {/*-----------------Dummy Photo END----------------- */}
-            <CommonOblongContainer bordercolor="green">
+            <CommonOblongContainer bordercolor="yellow">
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
-                color="green"
+                color="yellow"
                 lineHeight={0.5}
               >
                 ABOUT ME
@@ -174,11 +174,11 @@ const IndexPage: React.FC<PageProps> = () => {
               windowScreenSize.tablet <= windowSize ? "1px solid" : ""
             }
           >
-            <CommonOblongContainer bordercolor="red">
+            <CommonOblongContainer bordercolor="yellow">
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
-                color="red"
+                color="yellow"
                 lineHeight={0.5}
               >
                 WORK EXPERIENCE
@@ -209,14 +209,13 @@ const IndexPage: React.FC<PageProps> = () => {
         >
           <CommonDivider margin="10px 0px" isHideTablet />
           <CommonOblongContainer
-            bordercolor="blue"
+            bordercolor="yellow"
             // background="blue"
           >
             <CommonText
               isTitleFont
               fontSize="xSmall"
-              color="blue"
-              // color="body"
+              color="yellow"
               lineHeight={0.5}
             >
               WORK PROJECTS
@@ -248,14 +247,14 @@ const IndexPage: React.FC<PageProps> = () => {
               windowScreenSize.tablet <= windowSize ? "1px solid" : ""
             }
           >
-            <CommonOblongContainer bordercolor="red">
+            <CommonOblongContainer bordercolor="yellow">
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
-                color="red"
+                color="yellow"
                 lineHeight={0.5}
               >
-                LIFE BEYOND TECH
+                BLOGS
               </CommonText>
             </CommonOblongContainer>
 
@@ -281,7 +280,7 @@ const IndexPage: React.FC<PageProps> = () => {
             widthTablet="100%"
           >
             <CommonOblongContainer
-              bordercolor="red"
+              bordercolor="yellow"
               margin={
                 windowScreenSize.tablet <= windowSize ? "0px 0px 0px 5px" : ""
               }
@@ -289,7 +288,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <CommonText
                 isTitleFont
                 fontSize="xSmall"
-                color="red"
+                color="yellow"
                 lineHeight={0.5}
               >
                 LINKS

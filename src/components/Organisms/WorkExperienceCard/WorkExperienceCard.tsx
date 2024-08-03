@@ -1,9 +1,9 @@
 import React from "react";
 import { CommonFlexContainer } from "../../Atoms/CommonAtomComponents";
 import { CommonText } from "../../Atoms/CommonText";
-import { WorkExperienceCardProps } from "../../../types/types";
+import { WorkExperienceCardTypes } from "../../../types/types";
 
-const WorkExperienceCard = (props: WorkExperienceCardProps) => {
+const WorkExperienceCard = (props: WorkExperienceCardTypes ) => {
   const { companyName, startDate, endDate, description, position } = props;
   return (
     <CommonFlexContainer isColumn iscolumntablet>
@@ -11,9 +11,10 @@ const WorkExperienceCard = (props: WorkExperienceCardProps) => {
         margin="0px 0px -10px 0px"
         justify="space-between"
         align="center"
+        gap="5px"
       >
         <CommonFlexContainer isColumn iscolumntablet align="left" width="55%">
-          <CommonText fontSize="medium" fontWeight={700}>
+          <CommonText fontSize="large" fontWeight={700}>
             {companyName}
           </CommonText>
           <CommonText

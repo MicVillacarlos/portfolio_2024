@@ -9,7 +9,8 @@ const fontSize = {
   xLarge: "26px",
   xxLarge: "30px",
   xxxLarge: "34px",
-  title: "45px",
+  titleS: "45px",
+  title: "60px",
 };
 
 const themeColors = {
@@ -21,7 +22,7 @@ const themeColors = {
     //colors -------
     red: "#BE3D20",
     blue: "#002D62",
-    yellow: "#C1A238",
+    yellow: "#FDFD96",
     green: "#325234",
     gray: "#B2BEB5",
   },
@@ -33,7 +34,7 @@ const themeColors = {
     //colors -------
     red: "#BE3D20",
     blue: "#3D87AA",
-    yellow: "#C1A238",
+    yellow: "#FDFD96",
     green: "#6F8570",
     gray: "#B2BEB5",
   },
