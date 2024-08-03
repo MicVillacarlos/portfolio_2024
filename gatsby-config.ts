@@ -27,7 +27,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Playfair Display", "Oswald"],
+          families: ["Playfair Display", "Oswald", "Gideon Roman"],
         },
       },
     },
