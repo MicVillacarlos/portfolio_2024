@@ -48,7 +48,6 @@ const IndexPage: React.FC<PageProps> = () => {
       position: "Fullstack Web Developer",
       description:
         "Worked on various projects involving web development and software engineering.",
-      technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
     },
     {
       companyName: "AJIO IT Solutions",
@@ -57,7 +56,6 @@ const IndexPage: React.FC<PageProps> = () => {
       position: "Frontend Web Developer",
       description:
         "Worked on various projects involving web development and software engineering.",
-      technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
     },
   ];
 
@@ -65,30 +63,43 @@ const IndexPage: React.FC<PageProps> = () => {
     {
       id: 1,
       title: "GrowerStats",
-      imageLink: "https://lh3.googleusercontent.com/d/1r-8P9YvJqzLn9AIn6EmGCDxR9cFKIMm9",
+      imageLink:
+        "https://lh3.googleusercontent.com/d/1r-8P9YvJqzLn9AIn6EmGCDxR9cFKIMm9",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
+        "A mobile app for market managers to record customer orders for fruits and vegetables, and an admin web app that tracks these orders, monitors fruit & vegetable intake/orders and provides data for customers to review.",
+      technology: "MongoDB, React Js,React Native, Express, NodeJS",
+      responsibilities:[""]
+      
     },
     {
       id: 2,
       title: "Secret Dates",
-      imageLink: "https://lh3.googleusercontent.com/d/1kv3ixfDcaehCAwjMdXntnGKLH4R0_YfL",
+      imageLink:
+        "https://lh3.googleusercontent.com/d/1kv3ixfDcaehCAwjMdXntnGKLH4R0_YfL",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
+        "Online dating web app that matches users based on shared preferred activities or dining places.",
+      technology: "MongoDB, React Js, Express, NodeJS",
+      responsibilities:[""]
     },
     {
       id: 3,
       title: "KUHL Car Simulation",
-      imageLink: "https://lh3.googleusercontent.com/d/1pB1yqlc-z1Kam8_Pw8n0Gxt7cCt-6034",
+      imageLink:
+        "https://lh3.googleusercontent.com/d/1pB1yqlc-z1Kam8_Pw8n0Gxt7cCt-6034",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
+        "Online web app enabling customers to customize and order vehicles directly, with real-time visualization and purchase/order integration.",
+      technology: "Next Js",
+      responsibilities:[""]
     },
     {
       id: 4,
       title: "My HealthNotes",
-      imageLink: "https://lh3.googleusercontent.com/d/15kkl17miERM--Bou8Fa4mj8cFHkv3xpI",
+      imageLink:
+        "https://lh3.googleusercontent.com/d/15kkl17miERM--Bou8Fa4mj8cFHkv3xpI",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet diam quis quam fermentum, vit ultricies ex suscipit. Maecenas ac sodales turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sedrhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend. asdqwes",
+        "A mobile app that helps users stay on track with their health goals and tasks through reminders, along with an admin interface for assigning and managing tasks",
+      technology: "MongoDB, React Js,React Native, Express, NodeJS",
+      responsibilities:[""]
     },
   ];
 
@@ -239,7 +250,8 @@ const IndexPage: React.FC<PageProps> = () => {
             iscolumntablet
             width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             widthTablet="100%"
-            align="start"
+            align="end"
+            padding="0px 7px 0px 0px"
             justify="center"
             marginTopTablet="20px"
           >
@@ -260,6 +272,7 @@ const IndexPage: React.FC<PageProps> = () => {
               marginTop="10px"
               marginTopTablet="10px"
               justify="center"
+              align="start"
               iscolumntablet
             >
               <SwipeCarousel />
@@ -282,27 +295,9 @@ const IndexPage: React.FC<PageProps> = () => {
             padding={
               windowScreenSize.tablet <= windowSize ? "0px 0px 0px 3px" : ""
             }
-          >
-            <CommonOblongContainer
-              bordercolor="yellow"
-              margin={
-                windowScreenSize.tablet <= windowSize ? "0px 0px 0px 5px" : ""
-              }
-            >
-              <CommonText
-                isTitleFont
-                fontSize="xSmall"
-                color="yellow"
-                lineHeight={0.5}
-              >
-                LINKS
-              </CommonText>
-            </CommonOblongContainer>
-            <CommonFlexContainer justify="center">
-              <LinksSection />
-            </CommonFlexContainer>
-          </CommonFlexContainer>
+          ></CommonFlexContainer>
         </CommonFlexContainer>
+
       </PageHolder>
       <StyledFooterComponent />
     </ThemeProvider>

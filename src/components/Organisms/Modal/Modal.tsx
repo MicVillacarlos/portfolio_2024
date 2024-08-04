@@ -2,14 +2,19 @@ import React, { Dispatch, SetStateAction } from "react";
 import Backdrop from "./Backdrop";
 import { ModalContainer } from "../StyledComponents";
 import { CommonText } from "../../Atoms/CommonText";
+import { ProjectCardProps } from "../../../types/types";
+import { CommonFlexContainer } from "../../Atoms/CommonAtomComponents";
 
 interface ModalProps {
-  closeModal: ()=>void;
-  title: string;
+  closeModal: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ closeModal, title }) => {
-
+const Modal: React.FC<ModalProps & ProjectCardProps> = ({
+  closeModal,
+  title,
+  description,
+  technology,
+}) => {
   const dropIn = {
     hidden: { y: "-100vh", opacity: 0 },
     visible: {
@@ -26,9 +31,7 @@ const Modal: React.FC<ModalProps> = ({ closeModal, title }) => {
   };
 
   return (
-    <Backdrop
-      onClick={closeModal}
-    >
+    <Backdrop onClick={closeModal}>
       <ModalContainer
         variants={dropIn}
         initial="hidden"
@@ -36,8 +39,24 @@ const Modal: React.FC<ModalProps> = ({ closeModal, title }) => {
         exit="exit"
         onClick={(e) => e.stopPropagation()}
       >
+        <CommonFlexContainer>
         <CommonText fontSize="xLarge" fontWeight={600} lineHeight={0.1}>
           {title}
+        </CommonText>
+        </CommonFlexContainer>
+
+        <CommonText fontSize="small" isTitleFont>
+          {description}
+        </CommonText>
+        <CommonText fontSize="small" isTitleFont>
+          Technologies Used:
+          <br />
+          {technology}
+        </CommonText>
+        <CommonText fontSize="small" isTitleFont>
+          Responsibilities:
+          <br />
+          {technology}
         </CommonText>
       </ModalContainer>
     </Backdrop>

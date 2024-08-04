@@ -5,17 +5,10 @@ import {
   ProjectCardImageContainer,
 } from "./StyledComponents";
 import { AnimatePresence } from "framer-motion";
-import { NorthEastArrowIcon } from "../Icons/Icons";
 import Modal from "./Modal/Modal";
+import { ProjectCardProps } from "../../types/types";
 
-interface ProjectCardProps {
-  id: number;
-  title: string;
-  description: string;
-  imageLink?: string;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, imageLink }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, description, imageLink,technology }) => {
   const [isViewDetails, setIsViewDetails] = useState<boolean>(false);
   const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
 
@@ -53,7 +46,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, imageLink }) => {
         </CommonFlexContainer>
       </ProjectCardContainer>
       <AnimatePresence initial={false} onExitComplete={() => null}>
-        {isViewDetails && <Modal title={title} closeModal={onCloseModal} />}
+        {isViewDetails && (
+          <Modal
+            technology={technology}
+            key={id}
+            id={id}
+            title={title}
+            description={description}
+            closeModal={onCloseModal}
+          />
+        )}
       </AnimatePresence>
     </>
   );

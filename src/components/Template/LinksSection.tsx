@@ -14,27 +14,27 @@ export const LinksSection = () => {
     <StyledGrid>
       <StyledGridItem>
         <CommonAnchor>
-          <InstagramIcon width="40" height="40" />
+          <InstagramIcon width="32" height="32" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
         <CommonAnchor>
-          <LinkedInIcon width="40" height="40" />
+          <LinkedInIcon width="32" height="32" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
         <CommonAnchor>
-          <GithubIcon width="25" height="25" />
+          <GithubIcon width="17" height="17" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
         <CommonAnchor>
-          <GmailIcon width="28" height="28" />
+          <GmailIcon width="21" height="21" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
         <CommonAnchor>
-          <LeetCodeIcon width="28" height="28" />
+          <LeetCodeIcon width="21" height="21" />
         </CommonAnchor>
       </StyledGridItem>
     </StyledGrid>

@@ -39,7 +39,7 @@ export const StyledGridItem = styled.div`
 export const SwipeCarouselContainer = styled.div`
   overflow: hidden;
   height: 100%;
-  width: 365px;
+  width: 380px;
   padding: 5px;
 
   @media ${device.tablet} {
