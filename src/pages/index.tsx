@@ -316,8 +316,8 @@ const IndexPage: React.FC<PageProps> = () => {
               windowScreenSize.tablet <= windowSize ? "0px 0px 0px 30px" : ""
             }
           >
-            <CommonText fontSize="titleS">
-              "We all have the ability to come from nothing to something."
+            <CommonText fontSize="titleS" align="center">
+              We all have the ability to come from nothing to something.
             </CommonText>
             <CommonFlexContainer justify="end" width="100%">
               - D. Goggins
