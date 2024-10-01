@@ -6,19 +6,27 @@ import {
 } from "./StyledComponents";
 import { AnimatePresence } from "framer-motion";
 import Modal from "./Modal/Modal";
-import { ProjectCardProps } from "../../types/types";
+import { ProjectDataTypes } from "../../types/types";
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, description, imageLink,technology }) => {
+const ProjectCard: React.FC<ProjectDataTypes> = ({
+  title,
+  id,
+  description,
+  imageLink,
+  technology,
+  responsibilities,
+  role
+}) => {
   const [isViewDetails, setIsViewDetails] = useState<boolean>(false);
   const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
 
   const onOpenModal = () => {
     setIsViewDetails(true);
-  }
+  };
 
   const onCloseModal = () => {
     setIsViewDetails(false);
-  }
+  };
   return (
     <>
       <ProjectCardContainer
@@ -48,6 +56,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, id, description, image
       <AnimatePresence initial={false} onExitComplete={() => null}>
         {isViewDetails && (
           <Modal
+            role={role}
+            responsibilities={responsibilities}
             technology={technology}
             key={id}
             id={id}

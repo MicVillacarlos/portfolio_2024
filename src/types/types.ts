@@ -13,18 +13,11 @@ export type ProjectDataTypes = {
   description: string;
   imageLink?: string;
   technology: string
-  responsibilities:[""]
+  role: string;
+  responsibilities:string[]
 }
 
 export type BlogCardType = {
   title: string;
   description: string;
-}
-
-export type ProjectCardProps = {
-  id: number;
-  title: string;
-  description: string;
-  imageLink?: string;
-  technology: string;
 }

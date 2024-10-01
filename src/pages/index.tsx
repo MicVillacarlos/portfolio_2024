@@ -66,10 +66,15 @@ const IndexPage: React.FC<PageProps> = () => {
       imageLink:
         "https://lh3.googleusercontent.com/d/1r-8P9YvJqzLn9AIn6EmGCDxR9cFKIMm9",
       description:
-        "A mobile app for market managers to record customer orders for fruits and vegetables, and an admin web app that tracks these orders, monitors fruit & vegetable intake/orders and provides data for customers to review.",
+        "A platform designed for market managers to record customer orders for fruits and vegetables, track intake, and provide health data for customers to review.",
       technology: "MongoDB, React Js,React Native, Express, NodeJS",
-      responsibilities:[""]
-      
+      role: "Fullstack Developer",
+      responsibilities: [
+        "Implemented user interfaces using React, ensuring a responsive, dynamic, and intuitive experience. Handle state management and create reusable components.",
+        "Develop and manage APIs using Node.js and Express.js and ensured the server logic supports the application’s features and business requirements.",
+        "Created and consumed RESTful APIs and integrated third-party services (Google Maps).",
+        "Worked closely with product managers, and other developers to translate business requirements into technical solutions.",
+      ],
     },
     {
       id: 2,
@@ -78,8 +83,15 @@ const IndexPage: React.FC<PageProps> = () => {
         "https://lh3.googleusercontent.com/d/1kv3ixfDcaehCAwjMdXntnGKLH4R0_YfL",
       description:
         "Online dating web app that matches users based on shared preferred activities or dining places.",
-      technology: "MongoDB, React Js, Express, NodeJS",
-      responsibilities:[""]
+      technology:
+        "MongoDB, React Js, Express, NodeJS, Stripe, Tailwind CSS, BitBucket",
+      role: "Fullstack Developer",
+      responsibilities: [
+        "Implemented new features and maintained system stability, optimizing overall performance and user experience.",
+        "Integrated Stripe to facilitate holding, accepting, and deleting payments in a project.",
+        "Integrated a third-party API from Eatsapp, an online food ordering platform, enabling users to book reservations and dining experiences within the system.",
+        "Worked closely with product managers, and other developers to translate business requirements into technical solutions.",
+      ],
     },
     {
       id: 3,
@@ -89,7 +101,11 @@ const IndexPage: React.FC<PageProps> = () => {
       description:
         "Online web app enabling customers to customize and order vehicles directly, with real-time visualization and purchase/order integration.",
       technology: "Next Js",
-      responsibilities:[""]
+      role: "Front-end Developer",
+      responsibilities: [
+        "Implemented user interfaces using Next Js, ensuring a responsive, dynamic, and intuitive experience. Handled state management and created reusable components.",
+        "Translated design specifications into responsive, pixel-perfect code, implementing styles using CSS to accurately match the designer's vision.",
+      ],
     },
     {
       id: 4,
@@ -99,7 +115,10 @@ const IndexPage: React.FC<PageProps> = () => {
       description:
         "A mobile app that helps users stay on track with their health goals and tasks through reminders, along with an admin interface for assigning and managing tasks",
       technology: "MongoDB, React Js,React Native, Express, NodeJS",
-      responsibilities:[""]
+      role: "Fullstack Developer",
+      responsibilities: [
+        "Enhanced app performance by 12% through optimization of React Native code, ensuring proper setup and efficient coding practices. Improved backend functionality by optimizing API queries.",
+      ],
     },
   ];
 
@@ -125,7 +144,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <CommonFlexContainer isColumn iscolumntablet>
           <TitleText>MICHAEL VILLACARLOS</TitleText>
           <CommonText
-            margin="-12px 0px 5px 0px"
+            margin="-10px 0px 50px 0px"
             isTitleFont
             fontSize={
               windowScreenSize.tablet <= windowSize ? "small" : "xxSmall"
@@ -145,12 +164,15 @@ const IndexPage: React.FC<PageProps> = () => {
             widthTablet="100%"
             padding="0px 10px 0px 0px"
             marginTop="10px"
+            borderright={
+              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
+            }
           >
             {/*-----------------Dummy Photo START----------------- */}
             <CommonFlexContainer
               background="text"
               height="250px"
-              margin="10px 0px"
+              margin="10px 0px 20px 0px"
             />
             {/*-----------------Dummy Photo END----------------- */}
             <CommonOblongContainer bordercolor="yellow">
@@ -164,11 +186,14 @@ const IndexPage: React.FC<PageProps> = () => {
               </CommonText>
             </CommonOblongContainer>
             <CommonText fontSize="small" isTitleFont>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              aliquet diam quis quam fermentum, vitae ultricies ex suscipit.
-              Maecenas ac sodales turpis. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia curae; Sed
-              rhoncus sapien vitae nisi eleifend, quis malesuada purus eleifend.
+              Discovered my passion for coding in late 2021. My curiosity and
+              love for learning led me to find coding as a perfect fit. Now,
+              with two years of experience as a developer, I continue to thrive
+              and enjoyed every project and the continuous growth it brings.
+            </CommonText>
+            <CommonText fontSize="small" isTitleFont>
+              When I'm away from my computer, I’m usually training Brazilian
+              Jiu-Jitsu at the gym, working out, or playing and creating music.
             </CommonText>
           </CommonFlexContainer>
           {/* ------------------- Column 2 -------------------- */}
@@ -181,9 +206,7 @@ const IndexPage: React.FC<PageProps> = () => {
             width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             isColumn
             iscolumntablet
-            borderLeft={
-              windowScreenSize.tablet <= windowSize ? "1px solid" : ""
-            }
+            marginTopTablet="50px"
           >
             <CommonOblongContainer bordercolor="yellow">
               <CommonText
@@ -215,13 +238,10 @@ const IndexPage: React.FC<PageProps> = () => {
           isColumn
           iscolumntablet
           align="start"
-          marginTopTablet="0px"
+          marginTopTablet="50px"
         >
-          <CommonDivider margin="25px 0px" isHideTablet />
-          <CommonOblongContainer
-            bordercolor="yellow"
-            // background="blue"
-          >
+          <CommonDivider margin="20px 0px" isHideTablet />
+          <CommonOblongContainer bordercolor="yellow">
             <CommonText
               isTitleFont
               fontSize="xSmall"
@@ -232,7 +252,7 @@ const IndexPage: React.FC<PageProps> = () => {
             </CommonText>
           </CommonOblongContainer>
           <CommonFlexContainer
-            marginTop="10px"
+            marginTop="20px"
             justify="center"
             gap="10px"
             iscolumntablet
@@ -243,17 +263,17 @@ const IndexPage: React.FC<PageProps> = () => {
           </CommonFlexContainer>
         </CommonFlexContainer>
         {/* ------------BLOGS----------------- */}
-        <CommonDivider margin="25px 0px" isHideTablet />
+        <CommonDivider margin="25px 0px 20px" isHideTablet />
         <CommonFlexContainer iscolumntablet align="start">
           <CommonFlexContainer
             isColumn
             iscolumntablet
             width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             widthTablet="100%"
-            align="end"
+            align="start"
             padding="0px 7px 0px 0px"
             justify="center"
-            marginTopTablet="20px"
+            marginTopTablet="50px"
           >
             <CommonOblongContainer bordercolor="yellow">
               <CommonText
@@ -281,10 +301,9 @@ const IndexPage: React.FC<PageProps> = () => {
 
           {/* ------------------ LINKS-------------------- */}
           <CommonFlexContainer
-            isColumn
-            iscolumntablet
             justify="start"
             align="start"
+            isColumn
             height="300px"
             marginTopTablet="20px"
             width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
@@ -292,12 +311,19 @@ const IndexPage: React.FC<PageProps> = () => {
             borderLeft={
               windowScreenSize.tablet <= windowSize ? "1px solid" : ""
             }
+            // margin="0px 0px 0px 20px"
             padding={
-              windowScreenSize.tablet <= windowSize ? "0px 0px 0px 3px" : ""
+              windowScreenSize.tablet <= windowSize ? "0px 0px 0px 30px" : ""
             }
-          ></CommonFlexContainer>
+          >
+            <CommonText fontSize="titleS">
+              "We all have the ability to come from nothing to something."
+            </CommonText>
+            <CommonFlexContainer justify="end" width="100%">
+              - D. Goggins
+            </CommonFlexContainer>
+          </CommonFlexContainer>
         </CommonFlexContainer>
-
       </PageHolder>
       <StyledFooterComponent />
     </ThemeProvider>

@@ -101,3 +101,13 @@ export const CommonOblongContainer = styled.div<CommonOblongContainerProps>`
   justify-content: center;
   margin: ${(props) => props.margin};
 `;
+
+export const CommonUl = styled.ul`
+  padding: 0px 0px 0px 8px;
+  margin: 5px 0px;
+  list-style: "- ";
+  li {
+    margin-bottom: 10px;
+    line-height: 20px;
+  }
+`;

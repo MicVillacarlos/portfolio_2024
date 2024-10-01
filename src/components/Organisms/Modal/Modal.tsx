@@ -2,18 +2,20 @@ import React, { Dispatch, SetStateAction } from "react";
 import Backdrop from "./Backdrop";
 import { ModalContainer } from "../StyledComponents";
 import { CommonText } from "../../Atoms/CommonText";
-import { ProjectCardProps } from "../../../types/types";
-import { CommonFlexContainer } from "../../Atoms/CommonAtomComponents";
+import { ProjectDataTypes } from "../../../types/types";
+import { CommonFlexContainer, CommonUl } from "../../Atoms/CommonAtomComponents";
 
 interface ModalProps {
   closeModal: () => void;
 }
 
-const Modal: React.FC<ModalProps & ProjectCardProps> = ({
+const Modal: React.FC<ModalProps & ProjectDataTypes> = ({
   closeModal,
   title,
   description,
   technology,
+  responsibilities,
+  role
 }) => {
   const dropIn = {
     hidden: { y: "-100vh", opacity: 0 },
@@ -40,23 +42,34 @@ const Modal: React.FC<ModalProps & ProjectCardProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         <CommonFlexContainer>
-        <CommonText fontSize="xLarge" fontWeight={600} lineHeight={0.1}>
-          {title}
-        </CommonText>
+          <CommonText fontSize="xLarge" fontWeight={600} lineHeight={0.1}>
+            {title}
+          </CommonText>
         </CommonFlexContainer>
 
         <CommonText fontSize="small" isTitleFont>
           {description}
         </CommonText>
+
         <CommonText fontSize="small" isTitleFont>
-          Technologies Used:
+          Role:
+          <br />
+          {role}
+        </CommonText>
+
+        <CommonText fontSize="small" isTitleFont>
+          Tools Technologies Used:
           <br />
           {technology}
         </CommonText>
         <CommonText fontSize="small" isTitleFont>
           Responsibilities:
           <br />
-          {technology}
+          <CommonUl>
+            {responsibilities.map((item: string, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
+          </CommonUl>
         </CommonText>
       </ModalContainer>
     </Backdrop>

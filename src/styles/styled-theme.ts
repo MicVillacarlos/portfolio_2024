@@ -15,20 +15,20 @@ const fontSize = {
 
 const themeColors = {
   light: {
-    body: "#D9D8D5",
+    body: "#fafafa",
     text: "#0b0904",
     test: "#AA0000",
     transparent: "rgba(0,0,0,0.5)",
     //colors -------
     red: "#BE3D20",
     blue: "#002D62",
-    yellow: "#FDFD96",
+    yellow: "#37667E",
     green: "#325234",
     gray: "#B2BEB5",
   },
   dark: {
     body: "#0b0904",
-    text: "#D9D8D5",
+    text: "#fafafa",
     test: "#AA0000",
     transparent: "rgba(0,0,0,0.5)",
     //colors -------
