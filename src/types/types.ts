@@ -11,7 +11,7 @@ export type ProjectDataTypes = {
   id: number;
   title: string;
   description: string;
-  imageLink?: string;
+  imageLink: string;
   technology: string
   role: string;
   responsibilities:string[]
@@ -20,4 +20,5 @@ export type ProjectDataTypes = {
 export type BlogCardType = {
   title: string;
   description: string;
+  link: string;
 }

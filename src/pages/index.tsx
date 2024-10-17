@@ -24,8 +24,8 @@ import WorkExperienceCard from "../components/Organisms/WorkExperienceCard/WorkE
 import { ProjectDataTypes, WorkExperienceCardTypes } from "../types/types";
 import ProjectCard from "../components/Organisms/ProjectCard";
 import StyledFooterComponent from "../components/Template/StyledFooterComponent";
-import { LinksSection } from "../components/Template/LinksSection";
 import { SwipeCarousel } from "../components/Template/Carousel/SwipeCarousel";
+import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -171,9 +171,14 @@ const IndexPage: React.FC<PageProps> = () => {
             {/*-----------------Dummy Photo START----------------- */}
             <CommonFlexContainer
               background="text"
-              height="250px"
               margin="10px 0px 20px 0px"
-            />
+              isobjectfitcover
+            >
+              <StaticImage
+                src="https://lh3.googleusercontent.com/d/1OutrSL_RKgXIseKhMICSwxu9Gnyf3uN8"
+                alt="banner_photo"
+              />
+            </CommonFlexContainer>
             {/*-----------------Dummy Photo END----------------- */}
             <CommonOblongContainer bordercolor="yellow">
               <CommonText
@@ -189,11 +194,11 @@ const IndexPage: React.FC<PageProps> = () => {
               Discovered my passion for coding in late 2021. My curiosity and
               love for learning led me to find coding as a perfect fit. Now,
               with two years of experience as a developer, I continue to thrive
-              and enjoyed every project and the continuous growth it brings.
+              and enjoy every project and the continuous growth it brings.
             </CommonText>
             <CommonText fontSize="small" isTitleFont>
-              When I'm away from my computer, I’m usually training Brazilian
-              Jiu-Jitsu at the gym, working out, or playing and creating music.
+              When I'm away from my computer, I’m usually training in Brazilian
+              Jiu-Jitsu at the gym, working out, or playing music.
             </CommonText>
           </CommonFlexContainer>
           {/* ------------------- Column 2 -------------------- */}
@@ -304,7 +309,8 @@ const IndexPage: React.FC<PageProps> = () => {
             justify="start"
             align="start"
             isColumn
-            height="300px"
+            iscolumntablet
+            height="320px"
             marginTopTablet="20px"
             width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             widthTablet="100%"

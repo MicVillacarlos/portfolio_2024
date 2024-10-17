@@ -12,13 +12,9 @@ const DRAG_BUFFER = 50;
 const objectData = [
   {
     title:
-      "Implementing Payment Transactions with Stripe in Node.js and React.js: Holding, Confirming, and Declining Payments",
+      "Implementing Payment Transactions with Stripe in Node.js(Express) and React.js: Holding, Confirming, and Declining Payments",
     description: "Lorem Ipsum",
-  },
-  {
-    title:
-      "Implementing Payment Transactions with Stripe in Node.js and React.js: Holding, Confirming, and Declining Payments",
-    description: "Lorem Ipsum",
+    link: "https://medium.com/@micvillacarlos/implementing-payment-transactions-with-stripe-in-node-js-express-de7611bc4e95",
   },
 ];
 
@@ -65,6 +61,7 @@ export const SwipeCarousel = () => {
                 description=""
                 title={item.title}
                 key={index}
+                link={item.link}
               />
             );
           })}

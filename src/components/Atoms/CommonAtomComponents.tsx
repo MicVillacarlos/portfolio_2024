@@ -23,6 +23,8 @@ interface FlexProps {
   widthTablet?: string;
   isColumn?: boolean;
   iscolumntablet?: boolean;
+  isoverflowscrolly?: boolean;
+  isobjectfitcover?: boolean;
   isRoundedCorners?: boolean;
   background?: string;
   gap?: string;
@@ -78,6 +80,7 @@ export const CommonFlexContainer = styled.div<FlexProps>`
   font-size: ${(props) =>
     props.fontSize && props.theme.fontSize[props.fontSize]};
   flex-shrink: ${(props) => props.flexshrink};
+  overflow-y: ${(props)=>props.isoverflowscrolly && "scroll" };
 
   @media ${device.tablet} {
     margin-top: ${(props) =>

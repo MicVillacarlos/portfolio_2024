@@ -112,9 +112,30 @@ export const BackdropContainer = styled(motion.div)`
 `;
 
 export const ModalContainer = styled(motion.div)`
-  padding: 20px;
   width: clamp(50%, 700px, 90%);
   height: min(50%, 500px);
   background-color: ${(props) => props.theme.body};
-  border: ${(props)=> `1px solid ${props.theme.text}`};
+  border: ${(props) => `1px solid ${props.theme.text}`};
+  display:flex;
+`;
+
+export const ImageModalContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+  img{
+    object-fit: cover;
+    width: 100%;            /* make the image fill the width of its parent */
+    height: 100%; 
+  }
+`;
+
+export const DetailsModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: scroll;
+  width: 50%;
 `;

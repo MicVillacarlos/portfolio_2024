@@ -4,7 +4,7 @@ import { BlogCardType } from "../../../types/types";
 import { CommonText } from "../../Atoms/CommonText";
 import { MediumIcon, NorthEastArrowIcon } from "../../Icons/Icons";
 
-const BlogCard = ({ title, description }: BlogCardType) => {
+const BlogCard = ({ title, description, link }: BlogCardType) => {
   return (
     <CommonFlexContainer
       isColumn
@@ -17,7 +17,7 @@ const BlogCard = ({ title, description }: BlogCardType) => {
     >
       <MediumIcon isNoHover height="10px" />
       <CommonText fontSize="large">{title}</CommonText>
-      <a onClick={() => window.open("https://google.com", "_blank")}>
+      <a onClick={() => window.open(link, "_blank")}>
         <NorthEastArrowIcon
           text={"View Full Article"}
           width="16"
