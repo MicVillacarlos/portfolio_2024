@@ -1,53 +1,60 @@
 import { createGlobalStyle } from "styled-components";
 
+const fontSize = {
+  xxSmall: "12px",
+  xSmall: "14px",
+  small: "16px",
+  medium: "18px",
+  large: "22px",
+  xLarge: "26px",
+  xxLarge: "30px",
+  xxxLarge: "34px",
+  titleS: "45px",
+  title: "60px",
+};
+
+const themeColors = {
+  light: {
+    body: "#fafafa",
+    text: "#0b0904",
+    test: "#AA0000",
+    transparent: "rgba(0,0,0,0.5)",
+    //colors -------
+    red: "#BE3D20",
+    blue: "#002D62",
+    yellow: "#37667E",
+    green: "#325234",
+    gray: "#B2BEB5",
+  },
+  dark: {
+    body: "#0b0904",
+    text: "#fafafa",
+    test: "#AA0000",
+    transparent: "rgba(0,0,0,0.5)",
+    //colors -------
+    red: "#BE3D20",
+    blue: "#3D87AA",
+    yellow: "#FDFD96",
+    green: "#6F8570",
+    gray: "#B2BEB5",
+  },
+};
 
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
-    font-family: "Noticia Text","Oswald";
+    font-family: Helvetica, sans-serif;
   }
 `;
 
 export const lightTheme = {
-  body: "#E6E4E2",
-  text: "#0b0904",
-  colors: {
-    black: "#0b0904",
-    white: "#E6E4E2",
-    test: "#AA0000",
-    transparent: `rgba(0,0,0,0.5)`,
-  },
-  fontSize: {
-    xxSmall: "12px",
-    xSmall: "14px",
-    small: "16px",
-    medium: "18px",
-    large: "22px",
-    xLarge: "26px",
-    xxLarge: "30px",
-    xxxLarge: "34px",
-  },
+  ...themeColors.light,
+  fontSize,
 };
 
 export const darkTheme = {
-  body: "#0b0904",
-  text: "#E6E4E2",
-  colors: {
-    black: "#0b0904",
-    white: "#E6E4E2",
-    test: "#AA0000",
-    transparent: `rgba(0,0,0,0.5)`,
-  },
-  fontSize: {
-    xxSmall: "12px",
-    xSmall: "14px",
-    small: "16px",
-    medium: "18px",
-    large: "22px",
-    xLarge: "26px",
-    xxLarge: "30px",
-    xxxLarge: "34px",
-  },
+  ...themeColors.dark,
+  fontSize,
 };
