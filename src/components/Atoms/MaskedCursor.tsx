@@ -33,15 +33,6 @@ const MaskedCursor = () => {
     };
   }, []);
 
-  const webmaskposition =
-    screenWidth < windowScreenSize.tablet
-      ? `${screenWidth / 4 - mousePosition.x}px ${
-          screenWidth / 4 - mousePosition.y
-        }px`
-      : `${screenWidth / 2 - mousePosition.x}px ${
-          screenWidth / 2 - mousePosition.y
-        }px`;
-
   return (
     <ParentMaskContainer>
       <MaskContainer
