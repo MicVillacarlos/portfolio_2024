@@ -7,7 +7,6 @@ import {
 import { AnimatePresence } from "framer-motion";
 import Modal from "./Modal/Modal";
 import { ProjectDataTypes } from "../../types/types";
-import { StaticImage } from "gatsby-plugin-image";
 
 const ProjectCard: React.FC<ProjectDataTypes> = ({
   title,
@@ -16,7 +15,8 @@ const ProjectCard: React.FC<ProjectDataTypes> = ({
   imageLink,
   technology,
   responsibilities,
-  role
+  role,
+  imageCover
 }) => {
   const [isViewDetails, setIsViewDetails] = useState<boolean>(false);
   const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
@@ -24,15 +24,16 @@ const ProjectCard: React.FC<ProjectDataTypes> = ({
   const onOpenModal = () => {
     setIsViewDetails(true);
   };
-console.log(imageLink)
+
   const onCloseModal = () => {
     setIsViewDetails(false);
   };
+  
   return (
     <>
       <ProjectCardContainer
-        height="220px"
-        width="220px"
+        height="180px"
+        width="180px"
         bordercolor="text"
         padding="10px"
         isColumn
@@ -48,7 +49,7 @@ console.log(imageLink)
         onClick={onOpenModal}
       >
         <ProjectCardImageContainer isMouseOver={isMouseHover}>
-          <img src={imageLink} alt={`project_image`} />
+          <img src={imageCover} alt={`project_image`} />
         </ProjectCardImageContainer>
         <CommonFlexContainer marginTop="5px" justify="start">
           {title}

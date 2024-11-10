@@ -12,7 +12,8 @@ export type ProjectDataTypes = {
   title: string;
   description: string;
   imageLink: string;
-  technology: string
+  imageCover?: string;
+  technology: string;
   role: string;
   responsibilities:string[]
 }

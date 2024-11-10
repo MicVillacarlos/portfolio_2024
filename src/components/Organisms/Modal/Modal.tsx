@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Backdrop from "./Backdrop";
 import {
   DetailsModalContainer,
@@ -11,6 +11,7 @@ import {
   CommonFlexContainer,
   CommonUl,
 } from "../../Atoms/CommonAtomComponents";
+import { windowScreenSize } from "../../../utils/media_query";
 
 interface ModalProps {
   closeModal: () => void;
@@ -25,6 +26,16 @@ const Modal: React.FC<ModalProps & ProjectDataTypes> = ({
   role,
   imageLink,
 }) => {
+  const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const dropIn = {
     hidden: { y: "-100vh", opacity: 0 },
     visible: {
@@ -47,13 +58,16 @@ const Modal: React.FC<ModalProps & ProjectDataTypes> = ({
         initial="hidden"
         animate="visible"
         exit="exit"
-        onClick={(e) => e.stopPropagation()}
       >
-        <ImageModalContainer>
-          <img src={imageLink} alt={"project_image"} />
-        </ImageModalContainer>
+        {windowSize <= windowScreenSize.tablet ? null : (
+          <ImageModalContainer>
+            <img src={imageLink} alt={"project_image"} />
+          </ImageModalContainer>
+        )}
 
-        <DetailsModalContainer>
+        <DetailsModalContainer
+          iswidthfull={windowSize <= windowScreenSize.tablet ? true : false}
+        >
           <CommonText fontSize="xLarge" fontWeight={600}>
             {title}
           </CommonText>
@@ -84,7 +98,6 @@ const Modal: React.FC<ModalProps & ProjectDataTypes> = ({
             </CommonUl>
           </CommonText>
         </DetailsModalContainer>
-
       </ModalContainer>
     </Backdrop>
   );

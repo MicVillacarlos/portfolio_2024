@@ -13,6 +13,7 @@ import {
   CommonDivider,
   CommonFlexContainer,
   CommonOblongContainer,
+  ImageDescription,
 } from "../components/Atoms/CommonAtomComponents";
 import {
   MoonIcon,
@@ -26,6 +27,8 @@ import ProjectCard from "../components/Organisms/ProjectCard";
 import StyledFooterComponent from "../components/Template/StyledFooterComponent";
 import { SwipeCarousel } from "../components/Template/Carousel/SwipeCarousel";
 import { StaticImage } from "gatsby-plugin-image";
+import { CommonGridContainer } from "../components/Molecules/CommonMoleculeComponents";
+import MaskedCursor from "../components/Atoms/MaskedCursor";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
@@ -47,7 +50,7 @@ const IndexPage: React.FC<PageProps> = () => {
       endDate: "Present",
       position: "Fullstack Web Developer",
       description:
-        "Worked on various projects involving web development and software engineering.",
+        "Worked on web and mobile development projects across frontend and backend using the MERN stack and React Native, collaborating closely with QA engineers and project managers to deliver high-quality applications and meet project deadlines.",
     },
     {
       companyName: "AJIO IT Solutions",
@@ -55,14 +58,31 @@ const IndexPage: React.FC<PageProps> = () => {
       endDate: "April 2023",
       position: "Frontend Web Developer",
       description:
-        "Worked on various projects involving web development and software engineering.",
+        "Worked on frontend development for web projects using React.js and Next.js to create responsive, user-focused interfaces. Handled development tasks and ensured project goals were met within deadlines",
     },
   ];
 
   const ProjectData: ProjectDataTypes[] = [
     {
+      id: 4,
+      title: "My HealthNotes",
+      imageCover:
+        "https://lh3.googleusercontent.com/d/1oV1o7XwoG6fCx1VLDKJJEjIfDnJhKFTQ",
+      imageLink:
+        "https://lh3.googleusercontent.com/d/15kkl17miERM--Bou8Fa4mj8cFHkv3xpI",
+      description:
+        "A mobile app that helps users stay on track with their health goals and tasks through reminders, along with an admin interface for assigning and managing tasks",
+      technology: "MongoDB, React Js,React Native, Express, NodeJS",
+      role: "Fullstack Developer",
+      responsibilities: [
+        "Enhanced app performance by 12% through optimization of React Native code, ensuring proper setup and efficient coding practices. Improved backend functionality by optimizing API queries.",
+      ],
+    },
+    {
       id: 1,
       title: "GrowerStats",
+      imageCover:
+        "https://lh3.googleusercontent.com/d/1KU66BiPtGlWeZuwI4lrGfRxTV9yad8zJ",
       imageLink:
         "https://lh3.googleusercontent.com/d/1r-8P9YvJqzLn9AIn6EmGCDxR9cFKIMm9",
       description:
@@ -79,6 +99,8 @@ const IndexPage: React.FC<PageProps> = () => {
     {
       id: 2,
       title: "Secret Dates",
+      imageCover:
+        "https://lh3.googleusercontent.com/d/1BWef3rtzzSu8kg4a0M4xifecTsPb_ibW",
       imageLink:
         "https://lh3.googleusercontent.com/d/1kv3ixfDcaehCAwjMdXntnGKLH4R0_YfL",
       description:
@@ -96,6 +118,8 @@ const IndexPage: React.FC<PageProps> = () => {
     {
       id: 3,
       title: "KUHL Car Simulation",
+      imageCover:
+        "https://lh3.googleusercontent.com/d/1svIS3nb9mexe-lgFm8uS-p8yg7BqlQnM",
       imageLink:
         "https://lh3.googleusercontent.com/d/1pB1yqlc-z1Kam8_Pw8n0Gxt7cCt-6034",
       description:
@@ -108,16 +132,19 @@ const IndexPage: React.FC<PageProps> = () => {
       ],
     },
     {
-      id: 4,
-      title: "My HealthNotes",
+      id: 5,
+      title: "Appetit",
+      imageCover:
+        "https://lh3.googleusercontent.com/d/1bDtlmeYdDvrHNhAmotVwHnMoBC54yQXJ",
       imageLink:
-        "https://lh3.googleusercontent.com/d/15kkl17miERM--Bou8Fa4mj8cFHkv3xpI",
+        "https://lh3.googleusercontent.com/d/1eRuBb0DbmWT16Vg52sWl5G0kTI2QFesV",
       description:
-        "A mobile app that helps users stay on track with their health goals and tasks through reminders, along with an admin interface for assigning and managing tasks",
+        "A platform designed where customers go to book a table or place an order at their favorite restaurants. With the most comprehensive and user-friendly platform, appétit will always help you find the right place to suit your taste buds.",
       technology: "MongoDB, React Js,React Native, Express, NodeJS",
       role: "Fullstack Developer",
       responsibilities: [
-        "Enhanced app performance by 12% through optimization of React Native code, ensuring proper setup and efficient coding practices. Improved backend functionality by optimizing API queries.",
+        "Designed and implemented new application features and upgrades,  working with teams to ensure enhanced functionality, and improved user experience across the platforms.",
+        "Maintained and optimized system performance, conducting updates, troubleshooting, and applying best practices to ensure stability.",
       ],
     },
   ];
@@ -170,14 +197,17 @@ const IndexPage: React.FC<PageProps> = () => {
           >
             {/*-----------------Dummy Photo START----------------- */}
             <CommonFlexContainer
-              background="text"
-              margin="10px 0px 20px 0px"
+              margin="10px 0px 10px 0px"
               isobjectfitcover
+              isColumn
+              iscolumntablet
+              gap="5px"
+              align="left"
             >
-              <StaticImage
-                src="https://lh3.googleusercontent.com/d/1OutrSL_RKgXIseKhMICSwxu9Gnyf3uN8"
-                alt="banner_photo"
-              />
+              <MaskedCursor />
+              <ImageDescription>
+                (Hover across the page to find the optimal spot to see photo)
+              </ImageDescription>
             </CommonFlexContainer>
             {/*-----------------Dummy Photo END----------------- */}
             <CommonOblongContainer bordercolor="yellow">
@@ -206,12 +236,13 @@ const IndexPage: React.FC<PageProps> = () => {
             padding={
               windowScreenSize.tablet <= windowSize ? "20px 0px 0px 10px" : ""
             }
-            justify="start"
+            justify="space-between"
             align="start"
             width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             isColumn
             iscolumntablet
             marginTopTablet="50px"
+            height="100%"
           >
             <CommonOblongContainer bordercolor="yellow">
               <CommonText
@@ -226,18 +257,23 @@ const IndexPage: React.FC<PageProps> = () => {
             {dummyData.map((item, index) => {
               return <WorkExperienceCard key={index} {...item} />;
             })}
-            <a onClick={() => window.open("https://google.com", "_blank")}>
+            <a
+              onClick={() => window.open("https://google.com", "_blank")}
+              style={{
+                marginTop: windowScreenSize.laptop <= windowSize ? "15%" : "7%",
+              }}
+            >
               <NorthEastArrowIcon
                 text={"View Full Résumé"}
                 width="16"
                 height="16"
                 hoverTextColor="yellow"
-                marginBottom="10px"
                 isTransformX
               />
             </a>
           </CommonFlexContainer>
         </CommonFlexContainer>
+
         {/* ----------------------- PROJECTS ----------------------- */}
         <CommonFlexContainer
           isColumn
@@ -256,17 +292,16 @@ const IndexPage: React.FC<PageProps> = () => {
               WORK PROJECTS
             </CommonText>
           </CommonOblongContainer>
-          <CommonFlexContainer
-            marginTop="20px"
-            justify="center"
-            gap="10px"
-            iscolumntablet
-          >
-            {ProjectData.map((item, index) => {
-              return <ProjectCard key={index} {...item} />;
-            })}
+
+          <CommonFlexContainer marginTop="20px" justify="center" align="center">
+            <CommonGridContainer>
+              {ProjectData.map((item, index) => {
+                return <ProjectCard key={index} {...item} />;
+              })}
+            </CommonGridContainer>
           </CommonFlexContainer>
         </CommonFlexContainer>
+
         {/* ------------BLOGS----------------- */}
         <CommonDivider margin="25px 0px 20px" isHideTablet />
         <CommonFlexContainer iscolumntablet align="start">

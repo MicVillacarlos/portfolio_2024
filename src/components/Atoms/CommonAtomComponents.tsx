@@ -57,6 +57,10 @@ export const CommonDivider = styled.div<DividerProps>`
   }
 `;
 
+export const ImageDescription = styled.a`
+  font-style: italic;
+  font-size: 12px;
+`;
 export const CommonFlexContainer = styled.div<FlexProps>`
   gap: ${(props) => props.gap};
   display: flex;

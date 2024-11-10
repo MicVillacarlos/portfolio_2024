@@ -25,6 +25,14 @@ interface ProjectCardProps {
   isMouseOver?: boolean;
 }
 
+interface ModalContainerProps {
+  iscolumntablet?: boolean;
+}
+
+interface DetailContainerProps {
+  iswidthfull?: boolean;
+}
+
 export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
   gap: ${(props) => props.gap};
   display: flex;
@@ -45,9 +53,8 @@ export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
   margin-top: ${(props) => props.marginTop};
   border-radius: ${(props) => props.isRoundedCorners && "10px"};
   border: ${(props) =>
-  props.bordercolor && `1px solid ${props.theme[props.bordercolor]}`};
+    props.bordercolor && `1px solid ${props.theme[props.bordercolor]}`};
   border-radius: 10px;
-  /* flex-shrink:0; */
 
   @media ${device.tablet} {
     margin-top: ${(props) =>
@@ -56,7 +63,7 @@ export const ProjectCardContainer = styled(motion.div)<ProjectCardProps>`
     width: ${(props) => props.widthTablet};
   }
 
-  img{
+  img {
     object-fit: cover;
   }
 
@@ -83,8 +90,8 @@ export const ProjectCardImageContainer = styled.div<ProjectCardProps>`
     display: ${(props) => !props.isMouseOver && "none"};
   }
 
-  img{
-    -webkit-filter: grayscale(100%); 
+  img {
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
   }
 
@@ -111,31 +118,34 @@ export const BackdropContainer = styled(motion.div)`
   z-index: 2;
 `;
 
-export const ModalContainer = styled(motion.div)`
-  width: clamp(50%, 700px, 90%);
+export const ModalContainer = styled(motion.div)<ModalContainerProps>`
+  width: clamp(50%, 900px, 90%);
   height: min(50%, 500px);
   background-color: ${(props) => props.theme.body};
   border: ${(props) => `1px solid ${props.theme.text}`};
-  display:flex;
+  display: flex;
+
 `;
 
 export const ImageModalContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 55%;
 
-  img{
+  img {
     object-fit: cover;
-    width: 100%;            /* make the image fill the width of its parent */
-    height: 100%; 
+    width: 100%;
+    height: 100%;
+    background-color: ${(props)=>props.theme.text};
   }
 `;
 
-export const DetailsModalContainer = styled.div`
+export const DetailsModalContainer = styled.div<DetailContainerProps>`
   display: flex;
   flex-direction: column;
   padding: 20px;
   overflow-y: scroll;
-  width: 50%;
+  width: ${(props)=>props.iswidthfull ? null : "45%"};
+  text-align: left;
 `;

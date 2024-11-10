@@ -2,13 +2,9 @@ import styled from "styled-components";
 import { device, size } from "../../utils/media_query";
 import { motion } from "framer-motion";
 
-interface ButtonProps {
-  color?: string;
-}
-
 export const PageHolder = styled.div`
   margin: auto;
-  width: 1024px;
+  width: 1048px;
   padding-left: 5px;
   padding-right: 5px;
 
