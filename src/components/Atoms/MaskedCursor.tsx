@@ -12,12 +12,12 @@ const MaskedCursor = () => {
     x: 0,
     y: 0,
   });
-  // const [screenWidth, setScreenWidth] = useState<number>(0);
+  const [screenWidth, setScreenWidth] = useState<number>(0);
 
   useEffect(() => {
     // Only runs in the browser
     const handleResize = () => {
-      // setScreenWidth(window.innerWidth);
+      setScreenWidth(window.innerWidth);
     };
 
     const setFromEvent = (e: MouseEvent) => {
@@ -40,8 +40,8 @@ const MaskedCursor = () => {
     <ParentMaskContainer>
       <MaskContainer
         animate={{
-          WebkitMaskPosition: `${mousePosition.x}px ${
-            mousePosition.y
+          WebkitMaskPosition: `${screenWidth / 2 - mousePosition.x}px ${
+            screenWidth / 2 - mousePosition.y
           }px`,
         }}
         transition={{ type: "tween", ease: backOut }}
