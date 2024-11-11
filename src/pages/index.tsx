@@ -32,13 +32,14 @@ import MaskedCursor from "../components/Atoms/MaskedCursor";
 
 const IndexPage: React.FC<PageProps> = () => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
-  const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
+  const [windowSize, setWindowSize] = useState<number>(0);
   const toggleTheme = () => setIsDarkTheme(!isDarkTheme);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowSize(window.innerWidth);
     };
+    handleResize()
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

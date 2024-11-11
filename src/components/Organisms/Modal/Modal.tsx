@@ -26,12 +26,13 @@ const Modal: React.FC<ModalProps & ProjectDataTypes> = ({
   role,
   imageLink,
 }) => {
-  const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
+  const [windowSize, setWindowSize] = useState<number>(0);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowSize(window.innerWidth);
     };
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
