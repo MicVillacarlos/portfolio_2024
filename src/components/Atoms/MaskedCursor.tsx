@@ -6,31 +6,33 @@ import {
   ParentMaskContainer,
 } from "./StyledMaskCursor";
 import { backOut } from "framer-motion";
-import { windowScreenSize } from "../../utils/media_query";
 
 const MaskedCursor = () => {
-  const [mousePosition, setMousePosition] = useState<{
-    x: number;
-    y: number;
-  }>({ x: 0, y: 0 });
-  const [screenWidth, setScreenWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 0)
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
+  const [screenWidth, setScreenWidth] = useState<number>(0);
 
   useEffect(() => {
-    
-    const setFromEvent = (e: any) => {
+    // Only runs in the browser
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    const setFromEvent = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    const screenResize = () => {
-      const { innerWidth: width } = window;
-      setScreenWidth(width);
-    }
-    
+    // Set initial width on mount
+    handleResize();
+
     window.addEventListener("mousemove", setFromEvent);
-    window.addEventListener('resize', screenResize);
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      window.addEventListener("mousemove", setFromEvent);
-      window.removeEventListener('resize', screenResize);
+      window.removeEventListener("mousemove", setFromEvent);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -39,8 +41,8 @@ const MaskedCursor = () => {
       <MaskContainer
         animate={{
           WebkitMaskPosition: `${screenWidth / 2 - mousePosition.x}px ${
-          screenWidth / 2 - mousePosition.y
-        }px`,
+            screenWidth / 2 - mousePosition.y
+          }px`,
         }}
         transition={{ type: "tween", ease: backOut }}
       >
