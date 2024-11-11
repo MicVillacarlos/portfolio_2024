@@ -13,9 +13,10 @@ const MaskedCursor = () => {
     x: number;
     y: number;
   }>({ x: 0, y: 0 });
-  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth)
+  const [screenWidth, setScreenWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 0)
 
   useEffect(() => {
+    
     const setFromEvent = (e: any) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
