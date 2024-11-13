@@ -15,7 +15,8 @@ export type ProjectDataTypes = {
   imageCover?: string;
   technology: string;
   role: string;
-  responsibilities:string[]
+  responsibilities: string[]
+  liveSite?: string
 }
 
 export type BlogCardType = {

@@ -13,30 +13,30 @@ export const LinksSection = () => {
   return (
     <StyledGrid>
       <StyledGridItem>
-        <CommonAnchor>
+        <CommonAnchor href="https://www.instagram.com/micodes/">
           <InstagramIcon width="32" height="32" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
-        <CommonAnchor>
+        <CommonAnchor href="www.linkedin.com/in/michael-villacarlos">
           <LinkedInIcon width="32" height="32" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
-        <CommonAnchor>
+        <CommonAnchor href="https://github.com/MicVillacarlos">
           <GithubIcon width="17" height="17" />
         </CommonAnchor>
       </StyledGridItem>
       <StyledGridItem>
-        <CommonAnchor>
+        <CommonAnchor href="mailto:micvillacarlos@gmail.com">
           <GmailIcon width="21" height="21" />
         </CommonAnchor>
       </StyledGridItem>
-      <StyledGridItem>
+      {/* <StyledGridItem>
         <CommonAnchor>
           <LeetCodeIcon width="21" height="21" />
         </CommonAnchor>
-      </StyledGridItem>
+      </StyledGridItem> */}
     </StyledGrid>
   );
 };

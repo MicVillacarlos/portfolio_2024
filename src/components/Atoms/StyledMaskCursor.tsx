@@ -21,6 +21,7 @@ export const MaskContainer = styled(motion.div)`
 `;
 
 export const ImageArt = styled.div`
+  border: 1px solid ${(props)=>props.theme.text};
   background-image: url("https://lh3.googleusercontent.com/d/1wsPqLnIrnPeckXveYqFz5viRF4hYHzX9");
   background-size: cover;
   background-position: top;
@@ -40,7 +41,7 @@ export const ImageArt = styled.div`
 
 
 export const ImageOriginal = styled.div`
-  background-image: url('https://lh3.googleusercontent.com/d/1p1r96XjQlYzZdMr07JDrXhTsrmtfYpSV');
+  background-image: url('https://lh3.googleusercontent.com/d/1qt_FNQ9KpaXZ6YEig1t7xe5fU7nLGhV9');
   background-size: cover;
   background-position: top;
   width: 510px;

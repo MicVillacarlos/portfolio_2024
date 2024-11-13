@@ -9,13 +9,14 @@ const fontSize = {
   xLarge: "26px",
   xxLarge: "30px",
   xxxLarge: "34px",
+  titleXs: "40px",
   titleS: "45px",
   title: "60px",
 };
 
 const themeColors = {
   light: {
-    body: "#fafafa",
+    body: "#e8e6d8",
     text: "#0b0904",
     test: "#AA0000",
     transparent: "rgba(0,0,0,0.5)",
@@ -28,7 +29,7 @@ const themeColors = {
   },
   dark: {
     body: "#0b0904",
-    text: "#fafafa",
+    text: "#e8e6d8",
     test: "#AA0000",
     transparent: "rgba(0,0,0,0.5)",
     //colors -------

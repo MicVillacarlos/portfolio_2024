@@ -131,6 +131,7 @@ const IndexPage: React.FC<PageProps> = () => {
         "Implemented user interfaces using Next Js, ensuring a responsive, dynamic, and intuitive experience. Handled state management and created reusable components.",
         "Translated design specifications into responsive, pixel-perfect code, implementing styles using CSS to accurately match the designer's vision.",
       ],
+      liveSite: 'https://simulation.kuhl-japan.com/car'
     },
     {
       id: 5,
@@ -147,6 +148,7 @@ const IndexPage: React.FC<PageProps> = () => {
         "Designed and implemented new application features and upgrades,  working with teams to ensure enhanced functionality, and improved user experience across the platforms.",
         "Maintained and optimized system performance, conducting updates, troubleshooting, and applying best practices to ensure stability.",
       ],
+      liveSite: 'https://orderappetit.com/'
     },
   ];
 
@@ -259,7 +261,7 @@ const IndexPage: React.FC<PageProps> = () => {
               return <WorkExperienceCard key={index} {...item} />;
             })}
             <a
-              onClick={() => window.open("https://google.com", "_blank")}
+              onClick={() => window.open("https://www.canva.com/design/DAFzTxeD_Vc/PqBOajo55mbq4Xd9G7_RIA/view?utm_content=DAFzTxeD_Vc&utm_campaign=designshare&utm_medium=link&utm_source=editor", "_blank")}
               style={{
                 marginTop: windowScreenSize.laptop <= windowSize ? "15%" : "7%",
               }}
@@ -358,7 +360,7 @@ const IndexPage: React.FC<PageProps> = () => {
               windowScreenSize.tablet <= windowSize ? "0px 0px 0px 30px" : ""
             }
           >
-            <CommonText fontSize="titleS" align="center">
+            <CommonText fontSize="titleXs" align="center">
               We all have the ability to come from nothing to something.
             </CommonText>
             <CommonFlexContainer justify="end" width="100%">

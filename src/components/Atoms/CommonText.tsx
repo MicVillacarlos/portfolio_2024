@@ -10,6 +10,7 @@ interface TextProps {
   margin?: string;
   align?: string;
   fontWeight?: number;
+  color?: string
 }
 
 export const TitleText = styled.h1<TextProps>`
@@ -60,7 +61,7 @@ export const CommonAnchor = styled.a<TextProps>`
   font-family: Helvetica, sans-serif;
   font-weight: ${(props) => props.fontWeight};
   text-decoration: none;
-  color: ${(props)=>props.theme.text};
+  color: ${(props)=>props.color ? props.color : props.theme.text};
   :hover {
     cursor: pointer;
   }

@@ -5,7 +5,7 @@ import {
   ImageModalContainer,
   ModalContainer,
 } from "../StyledComponents";
-import { CommonText } from "../../Atoms/CommonText";
+import { CommonAnchor, CommonText } from "../../Atoms/CommonText";
 import { ProjectDataTypes } from "../../../types/types";
 import {
   CommonFlexContainer,
@@ -25,6 +25,7 @@ const Modal: React.FC<ModalProps & ProjectDataTypes> = ({
   responsibilities,
   role,
   imageLink,
+  liveSite
 }) => {
   const [windowSize, setWindowSize] = useState<number>(0);
 
@@ -98,6 +99,15 @@ const Modal: React.FC<ModalProps & ProjectDataTypes> = ({
               ))}
             </CommonUl>
           </CommonText>
+
+          {liveSite && (
+            <>
+              <CommonText fontSize="small" isTitleFont>
+                Live Website:{" "}
+                <CommonAnchor color="#0000EE" href={liveSite}>{liveSite}</CommonAnchor>
+              </CommonText>
+            </>
+          )}
         </DetailsModalContainer>
       </ModalContainer>
     </Backdrop>

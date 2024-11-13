@@ -16,7 +16,8 @@ const ProjectCard: React.FC<ProjectDataTypes> = ({
   technology,
   responsibilities,
   role,
-  imageCover
+  imageCover,
+  liveSite
 }) => {
   const [isViewDetails, setIsViewDetails] = useState<boolean>(false);
   const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
@@ -67,6 +68,7 @@ const ProjectCard: React.FC<ProjectDataTypes> = ({
             imageLink={imageLink}
             description={description}
             closeModal={onCloseModal}
+            liveSite={liveSite}
           />
         )}
       </AnimatePresence>
