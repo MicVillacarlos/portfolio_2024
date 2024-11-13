@@ -10,11 +10,11 @@ interface TextProps {
   margin?: string;
   align?: string;
   fontWeight?: number;
-  color?: string
+  color?: string;
+  isUnderLine?:boolean
 }
 
 export const TitleText = styled.h1<TextProps>`
-  font-weight: 900;
   font-size: ${(props) => props.theme.fontSize.title};
   color: ${(props) => props.theme.text};
   letter-spacing: -1px;
@@ -39,7 +39,7 @@ export const CommonText = styled.p<TextProps>`
   text-align: ${(props) => props.align};
   font-family:${(props) =>
     props.isTitleFont
-      ? "Helvetica, sans-serif"
+      ? "Helvetica, Arial, sans-serif"
       : "Gideon Roman, Times New Roman , Times, serif"};
   font-size: ${(props) =>
     props.fontSize
@@ -58,10 +58,11 @@ export const CommonText = styled.p<TextProps>`
 `;
 
 export const CommonAnchor = styled.a<TextProps>`
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: ${(props) => props.fontWeight};
-  text-decoration: none;
-  color: ${(props)=>props.color ? props.color : props.theme.text};
+  text-decoration: ${(props) => (props.isUnderLine ? "" : "none")};
+  color: ${(props) =>
+    props.color ? props.theme[props.color] : props.theme.text};
   :hover {
     cursor: pointer;
   }

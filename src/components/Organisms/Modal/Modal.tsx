@@ -104,7 +104,7 @@ const Modal: React.FC<ModalProps & ProjectDataTypes> = ({
             <>
               <CommonText fontSize="small" isTitleFont>
                 Live Website:{" "}
-                <CommonAnchor color="#0000EE" href={liveSite}>{liveSite}</CommonAnchor>
+                <CommonAnchor isUnderLine color="blue" href={liveSite}>{liveSite}</CommonAnchor>
               </CommonText>
             </>
           )}

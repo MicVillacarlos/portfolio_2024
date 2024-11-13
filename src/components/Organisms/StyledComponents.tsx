@@ -120,7 +120,7 @@ export const BackdropContainer = styled(motion.div)`
 
 export const ModalContainer = styled(motion.div)<ModalContainerProps>`
   width: clamp(50%, 900px, 90%);
-  height: min(50%, 500px);
+  height: min(70%, 500px);
   background-color: ${(props) => props.theme.body};
   border: ${(props) => `1px solid ${props.theme.text}`};
   display: flex;

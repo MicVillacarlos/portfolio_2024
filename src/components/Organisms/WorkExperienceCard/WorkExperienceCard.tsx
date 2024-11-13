@@ -14,12 +14,11 @@ const WorkExperienceCard = (props: WorkExperienceCardTypes ) => {
         gap="5px"
       >
         <CommonFlexContainer isColumn iscolumntablet align="left" width="55%">
-          <CommonText fontSize="large" fontWeight={700}>
+          <CommonText fontSize="large">
             {companyName}
           </CommonText>
           <CommonText
             fontSize="xSmall"
-            fontWeight={550}
             margin="-15px 0px 0px 0px"
             isTitleFont
           >
