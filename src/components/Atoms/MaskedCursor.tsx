@@ -36,13 +36,19 @@ const MaskedCursor = () => {
     };
   }, []);
 
+  const minusWidth = (number: number) => {
+    if (number > 500) {
+      return number / 4.5
+    } else {
+      return number/2
+    }
+  }
   return (
     <ParentMaskContainer>
       <MaskContainer
         animate={{
-          WebkitMaskPosition: `${screenWidth / 2 - mousePosition.x}px ${
-            screenWidth / 2 - mousePosition.y
-          }px`,
+          WebkitMaskPosition:
+            `${mousePosition.x - minusWidth(screenWidth)}px ${mousePosition.y - 300}px`,
         }}
         transition={{ type: "tween", ease: backOut }}
       >

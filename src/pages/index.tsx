@@ -209,7 +209,7 @@ const IndexPage: React.FC<PageProps> = () => {
             >
               <MaskedCursor />
               <ImageDescription>
-                (Hover across the page to find the optimal spot to see photo)
+                (Hover across the artwork to see me)
               </ImageDescription>
             </CommonFlexContainer>
             {/*-----------------Dummy Photo END----------------- */}
@@ -227,7 +227,7 @@ const IndexPage: React.FC<PageProps> = () => {
               Discovered my passion for coding in late 2021. My curiosity and
               love for learning led me to find coding as a perfect fit. Now,
               with two years of experience as a developer, I continue to thrive
-              and enjoy every project and the continuous growth it brings.
+              and enjoy every project I take and the continuous growth it brings.
             </CommonText>
             <CommonText fontSize="small" isTitleFont>
               When I'm away from my computer, I’m usually training in Brazilian
