@@ -39,7 +39,7 @@ const IndexPage: React.FC<PageProps> = () => {
     const handleResize = () => {
       setWindowSize(window.innerWidth);
     };
-    handleResize()
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -131,7 +131,7 @@ const IndexPage: React.FC<PageProps> = () => {
         "Implemented user interfaces using Next Js, ensuring a responsive, dynamic, and intuitive experience. Handled state management and created reusable components.",
         "Translated design specifications into responsive, pixel-perfect code, implementing styles using CSS to accurately match the designer's vision.",
       ],
-      liveSite: 'https://simulation.kuhl-japan.com/car'
+      liveSite: "https://simulation.kuhl-japan.com/car",
     },
     {
       id: 5,
@@ -148,7 +148,7 @@ const IndexPage: React.FC<PageProps> = () => {
         "Designed and implemented new application features and upgrades,  working with teams to ensure enhanced functionality, and improved user experience across the platforms.",
         "Maintained and optimized system performance, conducting updates, troubleshooting, and applying best practices to ensure stability.",
       ],
-      liveSite: 'https://orderappetit.com/'
+      liveSite: "https://orderappetit.com/",
     },
   ];
 
@@ -161,11 +161,11 @@ const IndexPage: React.FC<PageProps> = () => {
           <div>
             {isDarkTheme ? (
               <CommonAnchor onClick={toggleTheme}>
-                <SunIcon height="20" isNoHover />
+                <SunIcon height="20" isnohover />
               </CommonAnchor>
             ) : (
               <CommonAnchor onClick={toggleTheme}>
-                <MoonIcon height="20" isNoHover />
+                <MoonIcon height="20" isnohover />
               </CommonAnchor>
             )}
           </div>
@@ -227,7 +227,8 @@ const IndexPage: React.FC<PageProps> = () => {
               Discovered my passion for coding in late 2021. My curiosity and
               love for learning led me to find coding as a perfect fit. Now,
               with two years of experience as a developer, I continue to thrive
-              and enjoy every project I take and the continuous growth it brings.
+              and enjoy every project I take and the continuous growth it
+              brings.
             </CommonText>
             <CommonText fontSize="small" isTitleFont>
               When I'm away from my computer, I’m usually training in Brazilian
@@ -261,7 +262,12 @@ const IndexPage: React.FC<PageProps> = () => {
               return <WorkExperienceCard key={index} {...item} />;
             })}
             <a
-              onClick={() => window.open("https://www.canva.com/design/DAFzTxeD_Vc/PqBOajo55mbq4Xd9G7_RIA/view?utm_content=DAFzTxeD_Vc&utm_campaign=designshare&utm_medium=link&utm_source=editor", "_blank")}
+              onClick={() =>
+                window.open(
+                  "https://www.canva.com/design/DAFzTxeD_Vc/PqBOajo55mbq4Xd9G7_RIA/view?utm_content=DAFzTxeD_Vc&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+                  "_blank"
+                )
+              }
               style={{
                 marginTop: windowScreenSize.laptop <= windowSize ? "15%" : "7%",
               }}
@@ -352,7 +358,7 @@ const IndexPage: React.FC<PageProps> = () => {
             marginTopTablet="20px"
             width={windowScreenSize.tablet <= windowSize ? "50%" : "100%"}
             widthTablet="100%"
-            borderLeft={
+            borderleft={
               windowScreenSize.tablet <= windowSize ? "1px solid" : ""
             }
             // margin="0px 0px 0px 20px"

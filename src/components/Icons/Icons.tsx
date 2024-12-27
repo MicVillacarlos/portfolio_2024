@@ -12,9 +12,9 @@ interface IconProps {
   hoverTextColor?: string;
   marginBottom?: string;
   isTransformX?: boolean;
-  isNoHover?: boolean;
+  isnohover?: boolean;
   fontWeight?: number;
-  fontSize?:string
+  fontSize?: string;
 }
 
 const IconWrapper = styled(motion.div)<IconProps>`
@@ -35,7 +35,7 @@ const IconWrapper = styled(motion.div)<IconProps>`
   }
 
   &:hover {
-    cursor: ${(props) => (props.isNoHover ? "" : "pointer")};
+    cursor: ${(props) => (props.isnohover ? "" : "pointer")};
     color: ${(props) =>
       props.hoverTextColor && props.theme[props.hoverTextColor]};
 
@@ -43,7 +43,7 @@ const IconWrapper = styled(motion.div)<IconProps>`
       fill: ${(props) =>
         props.hoverTextColor && props.theme[props.hoverTextColor]};
       transform: ${(props) =>
-        props.isNoHover
+        props.isnohover
           ? ""
           : props.isTransformX
           ? `translateY(-3px) translateX(2px)`
@@ -54,7 +54,7 @@ const IconWrapper = styled(motion.div)<IconProps>`
 
 export const SunIcon = (props: IconProps) => {
   return (
-    <IconWrapper color={props.color} isNoHover={props.isNoHover}>
+    <IconWrapper color={props.color} isnohover={props.isnohover}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -960 960 960"
@@ -69,7 +69,7 @@ export const SunIcon = (props: IconProps) => {
 
 export const MoonIcon = (props: IconProps) => {
   return (
-    <IconWrapper color={props.color} isNoHover={props.isNoHover}>
+    <IconWrapper color={props.color} isnohover={props.isnohover}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -960 960 960"
@@ -116,7 +116,7 @@ export const InstagramIcon = (props: IconProps) => {
 export const NorthEastArrowIcon = (props: IconProps) => {
   return (
     <IconWrapper
-      isNoHover={props.isNoHover}
+      isnohover={props.isnohover}
       isTransformX={props.isTransformX}
       color={props.color}
       paddingTop={props.paddingTop}
@@ -138,7 +138,7 @@ export const NorthEastArrowIcon = (props: IconProps) => {
 
 export const GatsbyIcon = (props: IconProps) => {
   return (
-    <IconWrapper isNoHover={props.isNoHover} fontWeight={props.fontWeight}>
+    <IconWrapper isnohover={props.isnohover} fontWeight={props.fontWeight}>
       {props.text}
       <svg
         height={props.height ? props.height : "24"}
@@ -158,7 +158,7 @@ export const GatsbyIcon = (props: IconProps) => {
 
 export const GithubIcon = (props: IconProps) => {
   return (
-    <IconWrapper isNoHover={props.isNoHover}>
+    <IconWrapper isnohover={props.isnohover}>
       <svg
         height={props.height ? props.height : "24"}
         width={props.width ? props.width : "24"}
@@ -186,7 +186,7 @@ export const GithubIcon = (props: IconProps) => {
 
 export const FramerIcon = (props: IconProps) => {
   return (
-    // <IconWrapper fontWeight={props.fontWeight} isNoHover={props.isNoHover}>
+    // <IconWrapper fontWeight={props.fontWeight} isnohover={props.isnohover}>
     // {props.text}
     <svg
       height={props.height ? props.height : "24"}
@@ -246,7 +246,7 @@ export const LeetCodeIcon = (props: IconProps) => {
 
 export const MediumIcon = (props: IconProps) => {
   return (
-    <IconWrapper isNoHover={props.isNoHover}>
+    <IconWrapper isnohover={props.isnohover}>
       <svg
         id="Layer_1"
         data-name="Layer 1"
