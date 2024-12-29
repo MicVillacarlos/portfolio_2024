@@ -32,7 +32,7 @@ interface FlexProps {
   marginTop?: string;
   marginTopTablet?: string;
   padding?: string;
-  borderLeft?: string;
+  borderleft?: string;
   borderright?: string;
   borderTop?: string;
   borderBottom?: string;
@@ -73,7 +73,7 @@ export const CommonFlexContainer = styled.div<FlexProps>`
     props.background ? props.theme[props.background] : ""};
   margin: ${(props) => props.margin};
   border-right: ${(props) => props.borderright};
-  border-left: ${(props) => props.borderLeft};
+  border-left: ${(props) => props.borderleft};
   border-color: ${(props) => props.theme.text};
   padding: ${(props) => props.padding};
   word-break: break-word;
@@ -84,7 +84,7 @@ export const CommonFlexContainer = styled.div<FlexProps>`
   font-size: ${(props) =>
     props.fontSize && props.theme.fontSize[props.fontSize]};
   flex-shrink: ${(props) => props.flexshrink};
-  overflow-y: ${(props)=>props.isoverflowscrolly && "scroll" };
+  overflow-y: ${(props) => props.isoverflowscrolly && "scroll"};
 
   @media ${device.tablet} {
     margin-top: ${(props) =>

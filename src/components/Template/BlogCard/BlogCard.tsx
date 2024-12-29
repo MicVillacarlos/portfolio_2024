@@ -15,7 +15,7 @@ const BlogCard = ({ title, description, link }: BlogCardType) => {
       align="top"
       padding="5px"
     >
-      <MediumIcon isNoHover height="10px" />
+      <MediumIcon isnohover height="10px" />
       <CommonText fontSize="large">{title}</CommonText>
       <a onClick={() => window.open(link, "_blank")}>
         <NorthEastArrowIcon
