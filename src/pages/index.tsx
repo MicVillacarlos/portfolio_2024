@@ -264,7 +264,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <a
               onClick={() =>
                 window.open(
-                  "https://www.canva.com/design/DAFzTxeD_Vc/PqBOajo55mbq4Xd9G7_RIA/view?utm_content=DAFzTxeD_Vc&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+                  "https://www.canva.com/design/DAGjUeMWB6Y/80HmfOKoMfXfBsJcfkitbw/view?utm_content=DAGjUeMWB6Y&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8b7576e815",
                   "_blank"
                 )
               }
